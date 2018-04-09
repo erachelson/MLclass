@@ -25,7 +25,7 @@ By the end of the class, you should be able to:
 - Basic level in Python (language fundamentals, numpy).
 - Basic probability and optimization theory.
 
-You must download and install an Anaconda distribution for the latest version of Python before the course (https://anaconda.org/). Alternatively (to downloading Anaconda), you'll need a working Python installation (latest version) with at least, Numpy, Scipy, Matplotlib and Jupyter installed.<br>
+You must download and install an Anaconda distribution for the latest version of Python before the course ([https://anaconda.org/](https://anaconda.org/)). Alternatively (to downloading Anaconda), you'll need a working Python installation (latest version) with at least, Numpy, Scipy, Matplotlib and Jupyter installed.<br>
 Additional required Python packages:
 - nltk
 - keras (conda install keras)
@@ -34,35 +34,35 @@ Additional required Python packages:
 
 # Typical class outline
 Session 1: "Discovering Machine Learning"
-An introduction to Machine Learning
-Few words on the Unsupervized Learning problem
-Few words on the Reinforcement Learning problem
-Discovering scikit-learn
+- An introduction to Machine Learning
+- A few words on the Unsupervized Learning problem
+- A few words on the Reinforcement Learning problem
+- Discovering scikit-learn
 
 Session 2: "The geometric point of view"
-Optimal linear separation
-Support Vector Machines
-An introduction to kernel theory
+- Optimal linear separation
+- Support Vector Machines
+- An introduction to kernel theory
 
 Session 3: "The Bayesian point of view"
-The Bayes optimal classifier
-Naive Bayes Classifiers
-Gaussian Processes
+- The Bayes optimal classifier
+- Naive Bayes Classifiers
+- Gaussian Processes
 
-Session 4 and 5: "Neuro-inspired computation"
-Neural networks
-Deep Learning
-Convolutional Neural Networks
+Sessions 4 and 5: "Neuro-inspired computation"
+- Neural networks
+- Deep Learning
+- Convolutional Neural Networks
 
 Sessions 6 and 7: "Ensemble and committee-based methods"
-Decision trees
-Boosting
-Bagging
-Random Forests
+- Decision trees
+- Boosting
+- Bagging
+- Random Forests
 
 # Bibliography
-The Elements of Statistical Learning.
-T. Hastie, R. Tibshirani, J. Friedman.
-Springer Series in Statistics.
-https://web.stanford.edu/~hastie/ElemStatLearn/
-More references are provided during the first session and during classes.
+**The Elements of Statistical Learning.**<br>
+T. Hastie, R. Tibshirani, J. Friedman.<br>
+Springer Series in Statistics.<br>
+[https://web.stanford.edu/~hastie/ElemStatLearn/](https://web.stanford.edu/~hastie/ElemStatLearn/)<br>
+More references will be provided during the first session and during classes.
