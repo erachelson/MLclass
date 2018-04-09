@@ -1,0 +1,3 @@
+Subject: tone grammar
+
+none of the examples mentioned in john cowan 's recent posting summarizing responses on this topic appears to involve a language that uses language solely to mark grammatical as opposed to lexical distinctions . which makes one wonder about stress . does anybody know of an example of a language in which stress is distinctive but only used to mark grammatical categories . i have some possible examples in mind but these need some further reflection , so if anybody has clear examples , i for one would be interested ( the examples i am thinking of , which i am not too sure about , would involve tongan and perhaps persian ) .

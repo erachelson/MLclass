@@ -1,0 +1,3 @@
+Subject: teaching material for statistical cl
+
+content - length : 1364 dear all , i am going to develop a course on statistical models and methods in computational linguistics using eugene charniak 's book " statistical language learning " . i would be very grateful for advice concerning : 1 . supplementary literature , especially on the mathematical background , probability theory , etc . , but also on applications . 2 . material for practical exercises , mini-projects , etc . , both written material and software if available . i 'd be happy to post a summary to the linguist list if there is interest . best regards , joakim nivre department of linguistics g = f6teborg university e - mail : joakim @ ling . gu . se

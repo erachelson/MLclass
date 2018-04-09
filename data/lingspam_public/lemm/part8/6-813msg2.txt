@@ -1,0 +1,3 @@
+Subject: parser for russian
+
+this query be also post to seelangs - - apology in advance for redundancy . i ' m a doctoral candidate in slavic linguistics at the university of washington . this summer , though , i ' m intern at educational test service in princeton , nj , where i ' m work with the natural language initiative head by randy kaplan . as part of my summer project here , i want to look at parser which people may have build for russian . anyone know where i could find some to look at , or know someone who would know ? suggestion for read on non - english language parser be also welcome . thank in advance for any information , lisa frumk lfrumk @ et . org

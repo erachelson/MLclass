@@ -1,0 +1,3 @@
+Subject: parsers russian
+
+query was posted seelangs - - apologies advance redundancy . ' m doctoral candidate slavic linguistics university washington . summer , though , ' m interning educational testing service princeton , nj , where ' m working natural language initiative headed randy kaplan . part summer project here , wanted parsers built russian . anyone where , someone ? suggestions reading non - english language parsers are welcome . thanks advance information , lisa frumkes lfrumkes @ ets . org

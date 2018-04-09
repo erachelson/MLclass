@@ -1,0 +1,3 @@
+Subject: req : info on indian corpora . . .
+
+i would like to get in touch with people who are working on corpora-related research for indian languages . i am specifically interested in helping to build a corpus a corpus of thamizh ( tamil ) or malayalam ( or other indian languages ) , with the idea of building systems for automatic recognition of written / spoken text , and to aid in machine translation . thank you . peace , - - kr . pa

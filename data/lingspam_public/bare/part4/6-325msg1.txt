@@ -1,0 +1,3 @@
+Subject: hwaet ! old english software
+
+at the lsa software poster session in january , i gave out some copies of a macintosh ' electronic book ' i developed for learning old english ( ' hwaet ! old english in context ' , version 0 . 5 ) . after i got home i found some problems and typos , so i ' ve made a new version - if any readers got the old version , let me know , and i ' ll send you version 0 . 6 . i ' ve also converted a chunk of it to run on the web : it 's at http : / / www . georgetown . edu / cball / hwaet / hwaet06 . html this version looks best under mosaic for windows , which has thorn and eth , but i have n't converted all the sound files yet . thanks . . . - - cathy ball ( cball @ guvax . georgetown . edu )

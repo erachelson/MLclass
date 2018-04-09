@@ -1,0 +1,3 @@
+Subject: q ? french aspect
+
+my question arises from olsen 's 1994 diss on tense-aspect . it is standardly assumed that , e . g . , aimait is both past and imperfect * combined * . but i wonder about its synchronic status in spoken french . it seems to me that you have a simple past / nonpast contrast over three constructions : simple stem ; aux " have " + participle ; and infinitives with enclitic " have " , thus proportionately : aim-e : aim-ait : : a aime ' : av-ait aime ' : : aim-er - a : aim-er - ait if this analysis is correct for french , would it not be better to assume aimait is the " simple past tense " ? ? ? ? ? ? ? ? ? why not let the aspect come " for free " as a " default " interpretation . just musing .

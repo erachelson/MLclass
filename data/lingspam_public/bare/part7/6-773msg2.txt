@@ -1,0 +1,3 @@
+Subject: gb - based grammars of english
+
+does anyone know of any work being done on pedagogically-useful descriptions of english grammar from the perspective of the gb framework ? library shelves are full of 60 's - era tg grammars of english , compiled with various aims in mind . most current work in gb does not seem very language specific , and this is understandable given the aims of gb , but is there language-specific work being done by someone , or must i continue to use grammars with jazzy disco-looking fonts and pictures of linguists on the back covers with sideburns and bellbottoms ? tony wright < twright @ accdvm . accd . edu > st . philip 's college san antonio , texas , usa

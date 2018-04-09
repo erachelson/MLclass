@@ -1,0 +1,3 @@
+Subject: hi !
+
+this is a multi-part message in mime format . - - part0 _ 895780918 _ boundary content - id : content - type : text / plain ; charset = us-ascii - - part0 _ 895780918 _ boundary content - id : content - type : message / rfc822 content - transfer-encoding : 7bit content - disposition : inline from : hackevin return - path : to : hackevin @ aol . com subject : hi ! date : thu , 21 may 1998 11 : 34 : 50 edt organization : aol ( http : / / www . aol . com ) mime - version : 1 . 0 content - type : text / plain ; charset = us-ascii content - transfer-encoding : 7bit so much porn and so little time ! ! ! click here now ! ! ! and if you are gay click here now ! ! ! - - part0 _ 895780918 _ boundary - -

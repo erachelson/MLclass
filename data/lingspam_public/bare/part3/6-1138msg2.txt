@@ -1,0 +1,3 @@
+Subject: phoneme bigrams
+
+i am new to this list so i would like to say hello . i am working on speech comprehension in the psychology dept at york university . specifically i am looking at prosody and word boundary detection . i have a request . does anyone know where i can get a list of phoneme bigram ( and trigram possibly ) frequencies in english . all the counts that i have found are for letter bigrams not phonemes . can you help ? thanks very much , andy lloyd andy lloyd tel : 0904 433159 psychology department fax : 0904 433181 university of york york yo1 5dd email : ajl100 @ tower . york . ac . uk

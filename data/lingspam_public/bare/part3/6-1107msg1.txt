@@ -1,0 +1,3 @@
+Subject: re : 6 . 1101 , qs : literary texts on cd , j . roscoe , maya / mayan lg
+
+john wheatley asks for a source for tess of the d ' urbervilles . this text can be downloaded free of charge ( as can several other literary texts ) by anonymous ftp from ota . ox . ac . uk ( the oxford text archive ) . tess is in the sub-directory pub / ota / english / hardy / tess . 1581 ( i think the directory names are case sensitive ) . david

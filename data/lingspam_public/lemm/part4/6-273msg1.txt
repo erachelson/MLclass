@@ -1,0 +1,3 @@
+Subject: german text corpus / noun taxonomy
+
+dear linguist , i be look for german text corpus , particularly corpus that contain parse ( or at least partially parse ) sentence . i be also look for database contain information about synonymy and hyponymy relation between german noun or other information which could be usefull to build a classification taxonomy for german noun . thank you for help . andrea wagner

@@ -1,0 +1,3 @@
+Subject: german text corpora / noun taxonomy
+
+dear linguists , i am looking for german text corpora , particularly corpora that contain parsed ( or at least partially parsed ) sentences . i am also looking for databases containing information about synonymy and hyponymy relations between german nouns or other information which could be usefull to build a classification taxonomy for german nouns . thank you for help . andreas wagner

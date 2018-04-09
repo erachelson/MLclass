@@ -1,0 +1,3 @@
+Subject: software for propositional analysis
+
+hi ! i need to find a software to do propositional analysis to analyze large student ' write for my study . as far as i know , theoretically many differnet analysis frame have be suggest . especially , i be interest in kintsch 's model . if you happen to know any of this kind software , please let me know . if not , why do n't we make this kind of software for research and teach purpose ? thank in advance . byungmin lee university of texa at austin .

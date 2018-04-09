@@ -1,0 +1,3 @@
+Subject: pragmatic checking and anaphor resolution
+
+in an article by marslen - wilson , levy , and tyler ( 1982 ) " producing interpretable discourse : the establishment and maintenance of reference " they discuss the role of inference or " pragmatic checking " in the process of anaphor resolution . briefly , anaphoric resolution results from checking the information predicated of the anaphor with the local or preceding discourse and thereby inferring the intended referent . could anyone steer me in the direction of other research which pursues a similar line of argument ? thank you very much . - richard cameron

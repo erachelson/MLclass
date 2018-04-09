@@ -1,6 +1,6 @@
 # MLclass
-Materials for my Machine Learning class(es).
-Given in English to doctoral students in 2018.
+Materials for my Machine Learning class(es).<br>
+Given in English to doctoral students in 2018.<br>
 Previously given in French (in various previous versions) to master students starting 2012.
 
 # Description
@@ -25,7 +25,7 @@ By the end of the class, you should be able to:
 - Basic level in Python (language fundamentals, numpy).
 - Basic probability and optimization theory.
 
-You must download and install an Anaconda distribution for the latest version of Python before the course (https://anaconda.org/). Alternatively (to downloading Anaconda), you'll need a working Python installation (latest version) with at least, Numpy, Scipy, Matplotlib and Jupyter installed.
+You must download and install an Anaconda distribution for the latest version of Python before the course (https://anaconda.org/). Alternatively (to downloading Anaconda), you'll need a working Python installation (latest version) with at least, Numpy, Scipy, Matplotlib and Jupyter installed.<br>
 Additional required Python packages:
 - nltk
 - keras (conda install keras)

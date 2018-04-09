@@ -1,0 +1,3 @@
+Subject: spanish tts web
+
+are pleased announce addition our text-to - speech ( tts ) website , namely interactive demo our spanish tts system . address is : http : / / www . bell-labs . com / project / tts / spanish . html ( address main tts page is http : / / www . bell-labs . com / project / tts / ) - richard sproat language modeling research department multimedia communications research laboratory bell laboratories , lucent technologies | tel ( 908 ) 582-5296 700 mountain avenue , room 2d - 451 | fax ( 908 ) 582-3306 murray hill , nj 07974 , usa | rws @ bell-labs . com http : / / www . bell-labs . com / project / tts /

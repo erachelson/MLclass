@@ -1,0 +1,3 @@
+Subject: english parser
+
+logos corporation has pretty english semantico-syntactic parser ( tagger minimum ) incorporated machine translation product . are going package independent unix - based software package institut fuer deutsche sprache mannheim , germany , quite possibily copy might made available researchers . readysometime next monthor two , understand . parser dictionary has c . 40 , 000 entries . interested , please send description intended , input format considerations , etc . ' ll pass powers . usage include parser ( tagger ) evaluation , error rates , error feedback , etc . , much better . bud scott

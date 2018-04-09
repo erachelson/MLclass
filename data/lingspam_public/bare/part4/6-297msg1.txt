@@ -1,0 +1,3 @@
+Subject: references on formal description of discourse
+
+content - length : 1242 a student of mine who is not on the net is looking for references on formal , systematized description of discourse and dialogs ( tours de parole etc . ) , that would go ` ` beyond levison 's work ' ' ( his words ) to use in an automatic analyzer for political discourse . as his topic is rather out of our local waters ( syntax and parsing ) , i 'd appreciate any help you can provide . please answer to me directly ( walther @ uni2a . unige . ch ) and i ' ll post a summary . thanks , catherine walther u . of geneva

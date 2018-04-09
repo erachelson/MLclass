@@ -1,0 +1,3 @@
+Subject: german-english automatic translator
+
+dear fellows , we are looking for an automatic translator of german - english . something to which a user can send texts in one of this languages and receive the translation into the other language . it can be a semi-automatic software where the translation is not ' high-end ' , but with quality enough to save some work to an office secretary . do someone know where to find ( shareware preferably ) such a software ? thanks , a . santos = = adelino santos - fraunhofer institute for computer graphics ( fhg - igd ) dept . of cooperative and hypermedia systems wilhelminenstr . 7 tel : + 49 6151 155239 64283 darmstadt fax : + 49 6151 155299 germany mail : santos @ igd . fhg . de

@@ -1,0 +1,3 @@
+Subject: oulipo
+
+i am looking for information on oulipo , an experimental language group which flourished in the ' 60s in paris . members have included r . queneau , h . matthews , i calvino , and g . perec . the group applied mathematical methods to writing literature . there is scant information available in english , and a small amount in french . i am particularly interested in whether their ideas have been embodied in software or literaty theory . thank you michael sikillian annotext

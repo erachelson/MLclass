@@ -1,0 +1,3 @@
+Subject: conference listing , university of queensland , queensland , australia
+
+the national language and literacy institute of australia ltd language and technology centre ( lattice ) centre for language teaching and research ( cltr ) the university of queensland , queensland , australia december conference schedule : linguistics and related topics this conference schedule , listing over 150 conferences world-wide , is now available at the gopher site outlined below . at the command line , type gopher gopher . cltr . uq . oz . au go to the following directories : ftp archive the publically accessible archives nllia conferences if there are problems , please contact peter white peterw @ lingua . cltr . uq . oz . au

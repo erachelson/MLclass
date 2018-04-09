@@ -1,0 +1,3 @@
+Subject: summary : chomsky letting theory choose
+
+recently asked where was chomsky said unclear cases let theory choose right analysis . answer , supplied jan odijk , barbara abbott , michael israel ( whom thanks ) turns syntactic structures , p . 14 : . . . order set aims grammar significantly is sufficient assume partial knowledge sentences non-sentences . is , assume discussion certain sequences phonemes are definitely sentences , certain others sequences are definitely non-sentences . many intermediate cases shall prepared let grammar itself decide , grammar is set simplest includes clear sentences excludes clear non-sentences . . . . certain number clear cases , provide us criterion adequacy particular grammar .

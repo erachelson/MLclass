@@ -1,0 +1,3 @@
+Subject: computational phonology
+
+the acl special interest group in computational phonology announces its new home page at : http : / / www . cogsci . ed . ac . uk / sigphon access this page to : - * learn about computational phonology ; * view the online bibliography ; * obtain research papers ; * find out who 's who in computational phonology ; and * become a member of the special interest group . the information will be of particular interest if you are : * a phonologist , phonetician , psycholinguist , dialectologist , . . . and are wondering what computation has to offer ; * a computational linguist or speech technologist curious about the linguistic domain of phonology .

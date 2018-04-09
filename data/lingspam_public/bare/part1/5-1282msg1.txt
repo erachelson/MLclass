@@ -1,0 +1,3 @@
+Subject: optimality bibliography
+
+version 1 . 5 of the bibliography of work on optimality theory is available by anonymous ftp from ruccs . rutgers . edu ( see the file readme in the directory pub / ot / texts ) . various word-processing formats are provided . persons unable to use ftp can request an ascii version of the bibliography by sending an e-mail request to jmccarthy @ linguist . umass . edu . please include " optimality bibliography " in the subject line of your message . the bibliography includes references to approximately 150 papers and 70 handouts . john mccarthy & alan prince moderators ' note : the readme file is available in world wide web through the " linguistic datasources " link in the header of the web version of linguist .

@@ -1,0 +1,3 @@
+Subject: ipa fonts unix ( tex )
+
+linguist 6 . 810 , steve anderson requested english version documentation tsipa fonts . prof . fukui rei , one authors fonts , has supplied translation indicated version tsipa package ctan archives is being prepared contain documentation . meantime , documentation is available via ftp taptet . sscl . uwo . ca subdirectory pub . download files tsipadoc . ps tsipadoc . lj ( postscript , pcl versions ) depending printer . wish process documentation yourself , download tsipa . sty . gz tsipadoc . tar . gz . latex 2 . 09 , latex2e . chet creider < creider @ julian . uwo . ca >

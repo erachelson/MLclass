@@ -1,0 +1,3 @@
+Subject: universals
+
+suppose i have a language which inflects verbs for person , number , and sometimes gender of subject , inflects nps for case and number , has freeish word order , and commonly " drops " subject pronouns and in which there is a special inflection on verbs which indicates that the understood subject is impersonal and no overt subject phrase ( full np or pronoun ) can then occur , but otherwise everything is the same as with normal verb forms . would such a language violate anybody 's favorite universals in any current framework .

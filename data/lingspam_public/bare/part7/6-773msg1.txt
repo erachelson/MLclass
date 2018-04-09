@@ -1,0 +1,3 @@
+Subject: need : word order classifications
+
+i have been working on a paper about vennemann 's theory of natural serialization and am currently working on applying it to the current status of languages . i have in mind to compile a list of all european languages , stating which basic word order they have and how consistent they are . is there already such a list anywhere , and if where ; and if not , where could i retrieve this data from ? would it be " fairer " to vennemann if i did n't limit myself to european languages ? any help would be greatly appreciated . thank you , mic ps : i hope i have selected the appropriate group . please correct me if i am mistaken !
