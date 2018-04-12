@@ -1,0 +1,83 @@
+\documentclass{beamer}
+
+\mode<presentation>
+{
+\usetheme{Copenhagen}
+%\usetheme{Boadilla}
+%\usecolortheme{seahorse}
+%\useoutertheme{infolines}
+%\useoutertheme[compress]{miniframes}
+%\setbeamercovered{transparent}
+}
+
+%% \mode<presentation>
+%% {
+%% \usetheme{progressbar}
+%% \setbeamercovered{transparent}
+%% }
+
+%\usepackage[english]{babel}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+\usepackage[T1]{fontenc}
+\usepackage{xspace}
+%\usepackage{appendixnumberbeamer}
+\usepackage[noend]{algorithmic}
+%\usepackage[algo2e,vlined,algochapter,ruled,dotocloa]{algorithm2e}
+\usepackage{fancybox}
+\usepackage{algorithm}
+\usepackage[noend]{algorithmic}
+\usepackage{amssymb,amsmath}
+% \usepackage{ulem}
+\usepackage{makecell}
+\usepackage{times}
+\usepackage{bbding}
+
+\title[A few topics in Reinforcement Learning]{From Field problems to Machine Learning}
+\subtitle{An introduction to the Data Science workflow\\and a motivation to understand Machine Learning}
+%\title{The Optimal Swapping Problem during Nuclear Refueling Operations}
+
+
+\author{E. Rachelson}
+
+\institute{\includegraphics[width=1.5cm]{img/isae.jpg}}
+
+\date{}
+
+
+\setbeamerfont{bibliography entry author}{shape=\upshape,series=\bfseries,size=\footnotesize}%
+\setbeamerfont{bibliography entry title}{shape=\upshape,size=\scriptsize,series=\mdseries}
+\setbeamerfont{bibliography entry journal}{shape=\upshape,size=\scriptsize,series=\mdseries}
+\setbeamerfont{bibliography entry note}{shape=\upshape,size=\scriptsize,series=\mdseries}
+
+\setbeamercolor{block}{bg=blue,fg=red}
+
+\beamertemplatenavigationsymbolsempty
+\setbeamertemplate{footline}[frame number]
+
+\begin{document}
+
+\begin{frame}{A probabilistic approach to ML}
+\begin{block}{}
+Bayesian approach: find $y$ that maximizes $\mathbb{P}(Y=y|\textrm{data}, X=x)$
+\end{block}
+This problem of Bayesian inference is hard to solve without additional hypothesis.
+\end{frame}
+
+\begin{frame}{A probabilistic approach to ML}
+\begin{block}{Naive Bayes classifiers}
+\begin{itemize}
+\item Make a naive, counter-intuitive hypothesis of conditional independence of the feature variables;
+\item Compute each class' probability for a new example using this hypothesis and picks the most probable one;
+\item Are a simple, scalable, online method;
+\item Despite their simplicity, perform surprisingly well and are competitive in many applications.
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\end{document}

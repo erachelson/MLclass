@@ -1,0 +1,4 @@
+# avoid saving tree images
+*.dot
+*.png
+

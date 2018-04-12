@@ -1,0 +1,115 @@
+%\documentclass[handout]{beamer}
+\documentclass{beamer}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{alltt}
+\usepackage{color}
+\newcommand{\highlight}[1]{\colorbox{yellow}{#1}}
+\usepackage{verbatim}
+
+%\usecolortheme{seagull}
+\useoutertheme{infolines}
+\usefonttheme[onlymath]{serif}
+
+\author{Emmanuel Rachelson}
+\title{An Introduction to Bagging}
+\date{}
+
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+\newcommand{\argmin}{\operatornamewithlimits{argmin}}
+
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+\begin{frame}{Why does Bagging work?}
+\only<1>{\begin{center}Why would $\varphi_B$ be any better than $\varphi$?\end{center}}
+\only<2>{\underline{Illustration on the regression case:}\\
+\begin{center}
+Suppose $(X,Y)$ drawn from distribution $P_{X,Y}$.\\
+$\varphi$ predictor trained on $\mathcal{T}$ or any bootstrap sample of $\mathcal{T}$\\
+%$\varphi_\mathcal{T}$ predictor trained on $\mathcal{T}$\\
+%$\varphi^b$ predictor trained on $\mathcal{T}^b$\\
+$\hat{P}_\mathcal{T}$ empirical distribution of $\mathcal{T}$\\
+$P_\mathcal{T}$ true distribution of $\mathcal{T}$\\
+To simplify notation: $\mathbb{E}_{P_{X,Y}} = \mathbb{E}_{X,Y}$, $\mathbb{E}_{P_{\mathcal{T}}} = \mathbb{E}_{\mathcal{T}}$ and $\mathbb{E}_{\hat{P}_{\mathcal{T}}} = \mathbb{E}_{\hat{\mathcal{T}}}$.\\
+$\varphi_B(\cdot) = \mathbb{E}_{\hat{\mathcal{T}}} \left( \varphi(\cdot) \right)$ Bagging predictor\\
+$\varphi_A(\cdot) = \mathbb{E}_{\mathcal{T}} \left( \varphi(\cdot) \right)$ aggregated predictor\\
+\end{center}
+}
+\only<3-13>{
+\visible<3->{Average prediction error of $\varphi$: $e=\mathbb{E}_{\mathcal{T}}\left(\mathbb{E}_{X,Y}\left(\left[Y-\varphi\left(X\right)\right]^2\right)\right)$.\\}
+\visible<4->{Average prediction error of $\varphi_A$: $e_A=\mathbb{E}_{X,Y}\left(\left[Y-\varphi_A\left(X\right)\right]^2\right)$.\\}
+\visible<5->{
+$e = \mathbb{E}_{X,Y}\left(Y^2\right) -2\mathbb{E}_{X,Y}\left(\only<5-6>{\alert<6>{\mathbb{E}_{\mathcal{T}}\left(Y\varphi\left(X\right)\right)}}\only<7->{Y\varphi_A(X)}\right) + \mathbb{E}_{X,Y}\left(\mathbb{E}_{\mathcal{T}}\left(\left[\varphi(X)\right]^2\right)\right)$\\
+}
+%\visible<7->{$e = \mathbb{E}_{X,Y}\left(Y^2\right) -2\mathbb{E}_{X,Y}\left( Y\varphi_A(X) \right) + \mathbb{E}_{X,Y}\left(\mathbb{E}_{\mathcal{T}}\left(\left[\varphi(X)\right]^2\right)\right)$\\}
+\visible<8->{
+But $\mathbb{E}_{X,Y}\left(\mathbb{E}_{\mathcal{T}}\left(\left[\varphi(X)\right]^2\right)\right) \geq \mathbb{E}_{X,Y}\left(\left[\only<8-9>{\alert<9>{\mathbb{E}_{\mathcal{T}}\left(\varphi(X)\right)}}\only<10->{\varphi_A(X)}\right]^2\right)$\\
+}
+\visible<11->{So \alert<11>{$e \geq e_A$}.\\}
+\visible<12->{Moreover:\\
+$e-e_A = \mathbb{E}_{X,Y}\left( \mathbb{E}_{\mathcal{T}}\left(\left[\varphi(X)\right]^2\right) - \left[\mathbb{E}_{\mathcal{T}}\left(\varphi(X)\right)\right]^2 \right)$\\
+$e-e_A = \mathbb{E}_{X,Y}\left( \mathbb{E}_{\mathcal{T}}\left(\left[\varphi(X)\right]^2\right) - \left[\varphi_A(X)\right]^2 \right)$\\
+}
+\visible<13->{
+~\\
+\underline{Interpretation:} if $\varphi_\mathcal{T}$ differs a lot from $\varphi_{\mathcal{T}'}$, then $e-e_A$ is large.\\ 
+$\Rightarrow$ \alert<13>{The highest the variance of $\varphi$ across training sets $\mathcal{T}$, the more improvement $\varphi_A$ produces.}
+}
+}
+\only<14-16>{
+\begin{center}
+\visible<14->{
+Ok, so $\varphi_A$ always improves on $\varphi$,\\
+especially when $\varphi$ is highly variable w.r.t. changes in $\mathcal{T}$.\\}
+\visible<15->{
+~\\
+But $\varphi_A$ is not $\varphi_B$. Recall:\\
+$\varphi_A(\cdot) = \mathbb{E}_{\mathcal{T}} \left( \varphi(\cdot) \right)$ aggregated predictor (over all $N$-size training sets)\\
+$\varphi_B(\cdot) = \mathbb{E}_{\hat{\mathcal{T}}} \left( \varphi(\cdot) \right)$ Bagging predictor (over bootstrap samples)\\
+$\varphi_B$ approximates $\varphi_A$ and thus $e_B\geq e_A$\\
+}
+\visible<16->{
+~\\
+\begin{itemize}
+\item If $\varphi$ highly variable w.r.t. $\mathcal{T}$, $\varphi_B$ improves on $\varphi$ through aggregation.
+\item But if $\varphi$ is rather stable w.r.t. $\mathcal{T}$, $e_A\approx e$ and since $\varphi_B$ approximates $\varphi_A$, $e_B$ might be greater than $e$.
+\end{itemize}
+}
+\end{center}
+}
+\only<17-18>{
+\visible<17->{
+So it does not always work?\\
+}
+\visible<18->{
+Actually, no, it does not always work.\\
+Bagging should be used to transform highly variable predictors $\varphi$ into a more accurate averaged commitee $\varphi_B$.\\
+~\\
+Examples of $\varphi$ that Bagging improve:\\
+$\rightarrow$ Trees, Neural Networks.\\
+Examples of $\varphi$ that Bagging does not improve much (or degrades):\\
+$\rightarrow$ Support Vector Machines, Gaussian Processes.
+}
+}
+\only<19->{
+\visible<19->{And in the classification case?\\}
+\visible<20->{
+Majority vote: $\varphi_B(x) = \arg\max\limits_{j} \sum\limits_{b=1}^B I(\varphi^b(x) = j)$\\
+More drastic conclusions:
+\begin{itemize}
+\item $\varphi$ unstable w.r.t. $\mathcal{T}$ and reasonable performance $\Rightarrow$ $\varphi_B$ near optimal.
+\item $\varphi$ stable w.r.t. $\mathcal{T}$ $\Rightarrow$ $\varphi_B$ worse than $\varphi$.
+\item $\varphi$ poor performance $\Rightarrow$ $\varphi_B$ worse than $\varphi$.
+\end{itemize}
+}
+}
+\end{frame}
+
+\end{document}

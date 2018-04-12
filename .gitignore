@@ -229,6 +229,4 @@ TSWLatexianTemp*
 # standalone packages
 *.sta
 
-# Fashion-MNIST data
-5 - Artificial Neural Networks/data/
 

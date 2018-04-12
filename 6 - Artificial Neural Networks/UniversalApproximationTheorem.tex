@@ -1,0 +1,87 @@
+\documentclass{beamer}
+
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{animate}
+
+%\usecolortheme{seagull}
+\useoutertheme{infolines}
+\usefonttheme[onlymath]{serif}
+
+\author{Emmanuel Rachelson}
+\title{Neural Networks}
+\date{}
+
+\setbeamertemplate{footline}{}
+\setbeamertemplate{navigation symbols}{}
+
+\begin{document}
+
+\begin{frame}{The NN theorem!}
+\small
+\begin{block}{Universal Approximation theorem}
+\begin{overlayarea}{\textwidth}{8cm}
+\only<1-3>{
+\visible<1->{
+Let 
+\begin{itemize}
+\item $\varphi(\cdot)$ be a $\left\{\begin{array}{l} \textrm{nonconstant,}\\ \textrm{bounded,}\\ \textrm{monotonically-increasing,}\\ \textrm{continuous}\end{array}\right.$ function on $\mathbb{R}$.
+\item $I_p=[0,1]^p$.
+\item $C(I_p)$ be the space of continuous functions on $I_p$
+\end{itemize}
+}
+\visible<2->{
+Then, $\forall f \in C(I_p)$, $\forall \varepsilon > 0$,
+}
+\visible<3->{$\exists N\in\mathbb{N}$, $\alpha_i \in \mathbb{R}^{p+1}, \beta_i \in \mathbb{R} \ (i \in [1,N])$,\\
+such that the function $F(x) = \displaystyle\sum_{i=1}^{N} \beta_i \varphi \left( \alpha_i^T x\right)$\\
+is an approximate realization of the function $f$:$\forall x\in I_p, \ | F( x ) - f ( x ) | < \varepsilon$.\\
+}
+}
+\only<4>{
+\begin{center}
+~\\~\\~\\~\\~\\Wait\ldots what?
+\end{center}
+}
+\only<5-6>{
+Let's say that again:\\
+
+[Under reasonable assumptions and definitions]
+$$F(x) = \sum_{i=1}^{N} \beta_i \varphi \left( \alpha_i^T x\right)$$
+$$\forall x\in I_p, \ | F( x ) - f ( x ) | < \varepsilon$$
+\visible<6->{
+In other words, functions of the form $F(x)$ are dense in $C(I_p)$.
+}
+}
+\only<7>{
+\begin{center}
+~\\~\\~\\~\\~\\Duh\ldots?
+\end{center}
+}
+\only<8-10>{
+\visible<8->{
+$$F(x) = \sum_{i=1}^{N} \beta_i \varphi \left( \alpha_i^T x\right)$$
+Given a big enough budget on $N$, one can approximate any function $f$ to any arbitrary precision $\varepsilon$ using functions of the form $F(x)$!\\
+}
+\visible<9->{
+~\\
+~\\
+Consequence:\\
+With enough neurons, a single layer, feed-forward ANN can approximate any function to any precision.
+It is a Universal Approximator.\\
+}
+\visible<10->{
+~\\
+~\\
+Warning:\\
+``with enough neurons'' $\rightarrow$ $N$ might be so large, the network might not be learnable in practice!
+}
+}
+\end{overlayarea}
+\end{block}
+\end{frame}
+
+\end{document}
+
