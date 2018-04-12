@@ -1,4 +1,4 @@
 - Reset exercices in notebooks
 - Add derivation of backprop slides to ANN
-- correct x_i typos in ANN
+- correct backprop in ANN: make it clearer by better decomposition of reasoning, more drawings, first compute \nabla_\theta for the last layer and work my way back instead of the general formula, disambiguate i = component index and i = sample number.
 
