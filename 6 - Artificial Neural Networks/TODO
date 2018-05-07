@@ -1,0 +1,4 @@
+Get rid of $\theta$ and replace it with $w$.
+Introduce a component-wise udpate at the end of section 4.2: $w_{ij} \leftarrow w_{ij} - \alpha_k g(w_k)_{ij}$
+Write code for backprop.
+
