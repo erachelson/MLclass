@@ -335,7 +335,7 @@ What does ML do? 3 main tasks.\\
 \makecell[{{p{0.27\textwidth}}}]{\centering $\{(x,y)\}$} & \makecell[{{p{0.27\textwidth}}}]{\centering $\{x\}$} & \makecell[{{p{0.27\textwidth}}}]{\centering $\{(x,u,r,x')\}$}\\
 \hline
 \makecell[{{p{0.07\textwidth}}}]{\textbf{Sub-task}} &
-\makecell[{{p{0.27\textwidth}}}]{\centering Classification, Regression} & \makecell[{{p{0.27\textwidth}}}]{\centering Clustering, Density estimation, Dimensionnality reduction} & \makecell[{{p{0.27\textwidth}}}]{\centering Value estimation, Policy optimization}\\
+\makecell[{{p{0.27\textwidth}}}]{\centering Classification, Regression} & \makecell[{{p{0.27\textwidth}}}]{\centering Clustering, Density estimation, Dimensionality reduction} & \makecell[{{p{0.27\textwidth}}}]{\centering Value estimation, Policy optimization}\\
 \hline
 \makecell[{{p{0.07\textwidth}}}]{\textbf{Algo ex.}} &
 \makecell[{{p{0.27\textwidth}}}]{\centering Neural Networks, SVM, Random Forests} & \makecell[{{p{0.27\textwidth}}}]{\centering k-means, PCA, HCA} & \makecell[{{p{0.27\textwidth}}}]{\centering Q-learning}\\
@@ -364,7 +364,7 @@ Evaluating supervized ML methods: what do we really want?\\
 ~\\
 \underline{Ability to fit the training data (regression):}
 \begin{itemize}
-\item Mean Square Error, \href{https://en.wikipedia.org/wiki/Coefficient_of_determination}{coeffient of determination}.
+\item Mean Square Error, \href{https://en.wikipedia.org/wiki/Coefficient_of_determination}{coefficient of determination}.
 $$MSE = \frac{1}{N}\sum_i \left(y_i - f(x_i)\right)^2$$
 $$R^2 = 1-\frac{\sum_i \left(y_i - f(x_i)\right)^2}{\sum_i \left(y_i - \bar{y}\right)^2}$$
 \end{itemize}
@@ -407,7 +407,7 @@ Evaluating supervized ML methods: what do we really want?\\
 \item ML Notions:
 \begin{itemize}
 \item maximize margin
-\item minimize difference btw class distributions (cross-entropy)
+\item minimize difference btw class distributions (cross-entropy \href{https://en.wikipedia.org/wiki/Cross_entropy}{[link]})
 \end{itemize}
 \end{itemize}
 $$H(p,\hat{p}) = \sum_i p(x_i) \log (\hat{p}(x_i)) = \mathbb{E}_p \left(\log(\hat{p})\right)$$
@@ -472,7 +472,7 @@ Other (excellent) references:\\
 Back to the example of Predictive Maintenance tasks.
 \begin{itemize}
 \item Visualizing system state\\
-\hspace{1cm} $\rightarrow$ Dimensionnality reduction (Unsupervized learning)
+\hspace{1cm} $\rightarrow$ Dimensionality reduction (Unsupervized learning)
 \item Detecting anomalies\\
 \hspace{1cm} $\rightarrow$ Density estimation (Unsupervized learning)
 \item Predicting RUL or TTF\\
