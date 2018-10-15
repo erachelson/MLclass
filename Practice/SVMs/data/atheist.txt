@@ -1,0 +1,12 @@
+Dataset:  atheist.dat
+
+Source: E. Filsinger (1976). "Tolerance of Non-Believers: A Cross-Tabular
+ and Log Linear Analysis of Some Religious Correlates," Review of Religious
+ Research, Vol.17, #3, pp.232-240
+
+Description: Church Attendance and Tolerance for Atheists for survey
+of 1221 people.
+
+Variables/Columns 
+Church Attendance   8  /* 1=Never, 2=Yearly, 3=Monthly, 4=Weekly */
+Tolerance for Atheists  16 /* 1=Low, 2=High  */
