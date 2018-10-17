@@ -16,7 +16,6 @@ for c in C:
         X_train, y_train, X_test, y_test = split_data(X, y, i*n, (i+1)*n)
         mySVC = svm.SVC(kernel='linear', C=c)
         mySVC.fit(X_train, y_train)
-        y_pred = mySVC.predict(X_test)
         acc = mySVC.score(X_test, y_test)
         accuracies.append(acc)
     accuracy.append(np.mean(accuracies))
