@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont}
+\setlength{\parskip}{2pt}
+\newcommand{\argmax}{\operatornamewithlimits{argmax}}
+
+\author{Emmanuel Rachelson}
+\title{Pre-class activities\\Naive Bayes Classification}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Cluedo}
+
+British people write ``rigour'' while US citizens write ``rigor''. A suspect in a hotel wrote this word on a piece of paper, then burnt it and left it behind to be found by the police. Only one letter remains readable; it is a vowel. It is known that 40\% of the hotel's clients are British and 60\% are Americans.\\
+\noindent \ding{43} What is the probability the suspect is British?\\
+
+{\it By using Bayes formula, one obtains that the probability of the suspect being British is equal to the likelihood of finding a vowel in the word provided that a British citizen wrote it, times the probability of meeting a British citizen in this hotel, divided by the probability of finding a vowel in this word in general.
+\begin{align*}
+\mathbb{P}(British | vowel) & = \frac{\mathbb{P}(vowel | British) \mathbb{P}(British)}{\mathbb{P}(vowel)}\\
+& = \frac{\mathbb{P}(vowel | British) \mathbb{P}(British)}{\mathbb{P}(vowel | British) \mathbb{P}(British) + \mathbb{P}(vowel | US) \mathbb{P}(US)}\\
+& = \frac{ \frac{3}{6} \frac{40}{100} }{ \frac{3}{6} \frac{40}{100} + \frac{2}{5} \frac{60}{100} }\\
+& = \frac{5}{11}
+\end{align*}
+}
+
+\noindent \ding{43} Suppose now there are more than two english-speaking nationalities staying in this hotel. What part of the previous calculation is unecessary to establish the most probable citizenship of the suspect?
+
+{\it To establish the most probable citizenship of the suspect, one needs to compare $\mathbb{P}(country | vowel)$ for all values of $country$ and pick the one with the highest estimated probability. Between all these calculations, only the numerator changes, hence:
+\begin{equation*}
+\text{most probable citizenship} = \argmax_{country} \mathbb{P}(vowel | country) \mathbb{P}(country)
+\end{equation*}
+}
+
+\section{[Optional] Quality check}
+
+In a manufacturing line, 1\% of the production has a defect. A performance test allows to filter out 95\% of faulty products but also excludes 2\% of acceptable ones.\\
+\noindent \ding{43} What is the probability of a control error?\\
+
+{\it The probability of a control error is the probability of either a false positive (FP) or a false negative (FN). Let us consider the events ``faulty product'' (F) and ``rejected product'' (R). The data tells us that:
+\begin{align*}
+\mathbb{P}(F) & = 0.01\\
+\mathbb{P}(R|F) & = 0.95\\
+\mathbb{P}(R|\bar{F}) = 0.02\\
+\end{align*}
+Then:
+\begin{align*}
+\mathbb{P}(FN) & = \mathbb{P}(F\wedge\bar{R}) = \mathbb{P}(\bar{R}|F)\mathbb{P}(F) = \left(1-\mathbb{P}\left(R|F\right)\right)\mathbb{P}(F)\\
+\mathbb{P}(FP) & = \mathbb{P}(\bar{F}\wedge R) = \mathbb{P}(R | \bar{F})\mathbb{P}(\bar{F})
+\end{align*}
+Thus:
+\begin{equation*}
+\mathbb{P}(FN \lor FP) = \left(1-0.95\right)0.01 + 0.02 \left(1-0.01 \right) = 0.0005 + 0.0198 = 0.0203
+\end{equation*}
+Interestingly, the mot probable control errors concern acceptable products rejected by mistake.
+}
+
+\noindent \ding{43} What is the probability of a letting a faulty product go through?
+
+{\it This probability is $\mathbb{P}(F|\bar{R})$. By application of Bayes' theorem:
+
+\begin{align*}
+\mathbb{P}(F|\bar{R}) &= \frac{\mathbb{P}(\bar{R}|F)\mathbb{P}(F)}{\mathbb{P}(\bar{R})}\\
+&= \frac{\left(1-\mathbb{P}(R|F)\right)\mathbb{P}(F)}{ \mathbb{P}(\bar{R}|F)\mathbb{P}(F) + \mathbb{P}(\bar{R}|\bar{F})\mathbb{P}(\bar{F}) }\\
+&= \frac{\left(1-\mathbb{P}(R|F)\right)\mathbb{P}(F)}{ \left(1-\mathbb{P}(R|F)\right)\mathbb{P}(F) + \left(1-\mathbb{P}(R|\bar{F})\right)\left(1-\mathbb{P}(F)\right) }\\
+&= \frac{ (1-0.95)0.01 }{ (1-0.95)0.01 + (1-0.02)(1-0.01) }\\
+&= 0,000515092
+\end{align*}
+
+\end{document}
