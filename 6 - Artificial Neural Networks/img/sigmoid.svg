@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="600" height="290" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs xmlns="http://www.w3.org/1999/xhtml"><style type="text/css"><![CDATA[
+body { background: rgb(255, 255, 255); font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15pt; font-family: Georgia, "Times New Roman", serif; line-height: 1.7; color: rgb(0, 0, 0); width: 100%; margin: 0px; padding: 0px; text-align: left; position: relative; }
+.header, .nonumber_header { position: relative; top: 0px; width: 100%; margin: 0px; background-color: rgb(28, 57, 80); }
+.header { height: 120px; }
+.nonumber_header { height: 80px; }
+h1 { position: absolute; top: 0px; left: 40px; right: 40px; padding: 0px; margin: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 34px; line-height: 1.2; color: rgb(238, 238, 238); white-space: nowrap; font-weight: 400; }
+h1.chapter_number { margin-top: 10px; font-size: 24px; border-bottom: 1px solid rgb(187, 187, 187); }
+h1.chapter_number a { color: rgb(238, 238, 238); }
+h1.chapter_title { margin-top: 56px; font-size: 34px; }
+h1.chapter_title a { color: rgb(238, 238, 238); }
+h2 { position: absolute; top: 0px; left: 40px; right: 40px; padding: 0px; margin: 16px 0px 0px; font-family: Helvetica, Arial, sans-serif; font-size: 34px; line-height: 1.2; color: rgb(238, 238, 238); white-space: nowrap; }
+h2 a { color: rgb(238, 238, 238); }
+#insertion { font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15pt; font-family: Georgia, "Times New Roman", serif; line-height: 1.7; color: rgb(51, 51, 51); padding: 5px 10px; background: rgb(204, 170, 170); border: 1px solid; margin: 10px 0px 0px; }
+p { font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15pt; font-family: Georgia, "Times New Roman", serif; line-height: 1.7; color: rgb(51, 51, 51); }
+h3 { color: rgb(28, 57, 80); margin: 40px 0px 20px; padding: 0px; font-size: 32px; line-height: 1.2; font-family: Helvetica, Arial, sans-serif; border-bottom: 1px solid rgb(102, 102, 102); }
+h4 { color: rgb(28, 57, 80); margin: 30px 0px 15px; padding: 0px; font-size: 26px; line-height: 1.2; font-family: Helvetica, Arial, sans-serif; }
+h5 { color: rgb(28, 57, 80); margin: 20px 0px 10px; padding: 0px; font-size: 26px; line-height: 1.2; font-family: Helvetica, Arial, sans-serif; }
+.section { width: 600px; margin-left: 40px; }
+a { color: rgb(42, 110, 166); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.equation_link { color: rgb(42, 110, 166); }
+.equation_link:hover { text-decoration: underline; cursor: pointer; }
+.MathJax { color: rgb(42, 42, 42); }
+.highlight { font-size: 9pt; }
+tt { font-size: 12pt; }
+path { stroke: rgb(42, 110, 166); stroke-width: 1; fill: none; }
+.axis { shape-rendering: crispEdges; }
+.axis text { font-family: Helvetica, Arial, sans-serif; font-size: 11px; }
+.axis line, .axis path { stroke: grey; }
+.axisLabel { font-size: 18px; font-family: Helvetica, Arial, sans-serif; font-style: italic; font-weight: bold; }
+#toc, .marginnote, .marginequation { position: absolute; left: 680px; width: 260px; padding: 0px; margin: 0px; }
+.sidebar { margin: 0px 0px 5px; padding: 0px; font-size: 12pt; line-height: 1.5; }
+.toc_title { margin: 0px; padding: 0px; font-size: 12pt; line-height: 1.5; }
+.toc_not_mainchapter { margin: 0px; padding: 0px 0px 0px 15px; font-size: 12pt; line-height: 1.5; }
+.toc_mainchapter { margin: 0px; padding: 0px 0px 0px 15px; text-indent: -15px; font-size: 12pt; line-height: 1.5; }
+.toc_reveal { cursor: pointer; }
+.toc_section { padding: 0px 0px 0px 15px; margin: 0px; }
+#toc ul { padding: 0px 0px 0px 15px; list-style-position: inside; margin: 0px; line-height: 1.5; }
+.sidebar_title { font-size: 18pt; font-family: Helvetica, Arial, sans-serif; }
+.marginnote { font-size: 9pt; color: rgb(102, 102, 102); display: inline-block; }
+.marginnote .MathJax { color: rgb(102, 102, 102); }
+.marginnote tt { font-size: 9pt; }
+.marginequation .MathJax { color: rgb(42, 110, 166); }
+#toc { font-size: 12pt; color: rgb(0, 0, 0); }
+.footer { position: relative; top: 0px; width: 100%; height: 130px; margin: 0px; background-color: rgb(28, 57, 80); }
+span.left_footer, span.right_footer { position: absolute; top: 12px; left: 40px; padding: 0px; margin: 0px; font-family: Helvetica, Arial, sans-serif; font-size: 9pt; line-height: 1.5; color: rgb(238, 238, 238); }
+span.left_footer { display: block; width: 600px; word-wrap: break-word; }
+span.right_footer { right: 40px; text-align: right; }
+.MathJax_Display { color: rgb(51, 51, 51) !important; }
+.videoOverlay { position: absolute; cursor: pointer; background-color: white; z-index: 100; }
+.videoOverlay img { position: absolute; display: block; }
+.graph3D { position: absolute; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 15px; font-family: MJX_Math; background-color: white; border-radius: 5px; line-height: 18px; padding: 0px 3px; }
+.highlight .hll { background-color: rgb(255, 255, 204); }
+.highlight { background: rgb(248, 248, 248); }
+.highlight .c { color: rgb(64, 128, 128); font-style: italic; }
+.highlight .err { border: 1px solid rgb(255, 0, 0); }
+.highlight .k { color: rgb(0, 128, 0); font-weight: bold; }
+.highlight .o { color: rgb(102, 102, 102); }
+.highlight .ch { color: rgb(64, 128, 128); font-style: italic; }
+.highlight .cm { color: rgb(64, 128, 128); font-style: italic; }
+.highlight .cp { color: rgb(188, 122, 0); }
+.highlight .cpf { color: rgb(64, 128, 128); font-style: italic; }
+.highlight .c1 { color: rgb(64, 128, 128); font-style: italic; }
+.highlight .cs { color: rgb(64, 128, 128); font-style: italic; }
+.highlight .gd { color: rgb(160, 0, 0); }
+.highlight .ge { font-style: italic; }
+.highlight .gr { color: rgb(255, 0, 0); }
+.highlight .gh { color: rgb(0, 0, 128); font-weight: bold; }
+.highlight .gi { color: rgb(0, 160, 0); }
+.highlight .go { color: rgb(136, 136, 136); }
+.highlight .gp { color: rgb(0, 0, 128); font-weight: bold; }
+.highlight .gs { font-weight: bold; }
+.highlight .gu { color: rgb(128, 0, 128); font-weight: bold; }
+.highlight .gt { color: rgb(0, 68, 221); }
+.highlight .kc { color: rgb(0, 128, 0); font-weight: bold; }
+.highlight .kd { color: rgb(0, 128, 0); font-weight: bold; }
+.highlight .kn { color: rgb(0, 128, 0); font-weight: bold; }
+.highlight .kp { color: rgb(0, 128, 0); }
+.highlight .kr { color: rgb(0, 128, 0); font-weight: bold; }
+.highlight .kt { color: rgb(176, 0, 64); }
+.highlight .m { color: rgb(102, 102, 102); }
+.highlight .s { color: rgb(186, 33, 33); }
+.highlight .na { color: rgb(125, 144, 41); }
+.highlight .nb { color: rgb(0, 128, 0); }
+.highlight .nc { color: rgb(0, 0, 255); font-weight: bold; }
+.highlight .no { color: rgb(136, 0, 0); }
+.highlight .nd { color: rgb(170, 34, 255); }
+.highlight .ni { color: rgb(153, 153, 153); font-weight: bold; }
+.highlight .ne { color: rgb(210, 65, 58); font-weight: bold; }
+.highlight .nf { color: rgb(0, 0, 255); }
+.highlight .nl { color: rgb(160, 160, 0); }
+.highlight .nn { color: rgb(0, 0, 255); font-weight: bold; }
+.highlight .nt { color: rgb(0, 128, 0); font-weight: bold; }
+.highlight .nv { color: rgb(25, 23, 124); }
+.highlight .ow { color: rgb(170, 34, 255); font-weight: bold; }
+.highlight .w { color: rgb(187, 187, 187); }
+.highlight .mb { color: rgb(102, 102, 102); }
+.highlight .mf { color: rgb(102, 102, 102); }
+.highlight .mh { color: rgb(102, 102, 102); }
+.highlight .mi { color: rgb(102, 102, 102); }
+.highlight .mo { color: rgb(102, 102, 102); }
+.highlight .sb { color: rgb(186, 33, 33); }
+.highlight .sc { color: rgb(186, 33, 33); }
+.highlight .sd { color: rgb(186, 33, 33); font-style: italic; }
+.highlight .s2 { color: rgb(186, 33, 33); }
+.highlight .se { color: rgb(187, 102, 34); font-weight: bold; }
+.highlight .sh { color: rgb(186, 33, 33); }
+.highlight .si { color: rgb(187, 102, 136); font-weight: bold; }
+.highlight .sx { color: rgb(0, 128, 0); }
+.highlight .sr { color: rgb(187, 102, 136); }
+.highlight .s1 { color: rgb(186, 33, 33); }
+.highlight .ss { color: rgb(25, 23, 124); }
+.highlight .bp { color: rgb(0, 128, 0); }
+.highlight .vc { color: rgb(25, 23, 124); }
+.highlight .vg { color: rgb(25, 23, 124); }
+.highlight .vi { color: rgb(25, 23, 124); }
+.highlight .il { color: rgb(102, 102, 102); }
+.MathJax_Hover_Frame { border-radius: 0.25em; box-shadow: rgb(136, 51, 170) 0px 0px 15px; display: inline-block; position: absolute; border: 1px solid rgb(170, 102, 221) !important; }
+.MathJax_Menu_Button .MathJax_Hover_Arrow { position: absolute; cursor: pointer; display: inline-block; border: 2px solid rgb(170, 170, 170); border-radius: 4px; font-family: "Courier New", Courier; font-size: 9px; color: rgb(240, 240, 240); }
+.MathJax_Menu_Button .MathJax_Hover_Arrow span { display: block; background-color: rgb(170, 170, 170); border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px; }
+.MathJax_Hover_Arrow:hover { color: white !important; border: 2px solid rgb(204, 204, 204) !important; }
+.MathJax_Hover_Arrow:hover span { background-color: rgb(204, 204, 204) !important; }
+#MathJax_About { position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: rgb(221, 221, 221); color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; box-shadow: rgb(128, 128, 128) 0px 10px 20px; }
+#MathJax_About.MathJax_MousePost { outline: none; }
+.MathJax_Menu { position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid rgb(204, 204, 204); margin: 0px; cursor: default; font-style: normal; font-weight: normal; font-size: 13px; font-family: system-ui; font-stretch: normal; font-variant: normal; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; box-shadow: rgb(128, 128, 128) 0px 10px 20px; }
+.MathJax_MenuItem { padding: 1px 2em; background: transparent; }
+.MathJax_MenuArrow { position: absolute; right: 0.5em; padding-top: 0.25em; color: rgb(102, 102, 102); font-size: 0.75em; }
+.MathJax_MenuActive .MathJax_MenuArrow { color: white; }
+.MathJax_MenuArrow.RTL { left: 0.5em; right: auto; }
+.MathJax_MenuCheck { position: absolute; left: 0.7em; }
+.MathJax_MenuCheck.RTL { right: 0.7em; left: auto; }
+.MathJax_MenuRadioCheck { position: absolute; left: 0.7em; }
+.MathJax_MenuRadioCheck.RTL { right: 0.7em; left: auto; }
+.MathJax_MenuLabel { padding: 1px 2em 3px 1.33em; font-style: italic; }
+.MathJax_MenuRule { border-top: 1px solid rgb(221, 221, 221); margin: 4px 3px; }
+.MathJax_MenuDisabled { color: graytext; }
+.MathJax_MenuActive { background-color: rgb(96, 104, 114); color: white; }
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus { background-color: rgb(232, 232, 232); }
+.MathJax_ContextMenu:focus { outline: none; }
+.MathJax_ContextMenu .MathJax_MenuItem:focus { outline: none; }
+#MathJax_AboutClose { top: 0.2em; right: 0.2em; }
+.MathJax_Menu .MathJax_MenuClose { top: -10px; left: -10px; }
+.MathJax_MenuClose { position: absolute; cursor: pointer; display: inline-block; border: 2px solid rgb(170, 170, 170); border-radius: 18px; font-family: "Courier New", Courier; font-size: 24px; color: rgb(240, 240, 240); }
+.MathJax_MenuClose span { display: block; background-color: rgb(170, 170, 170); border: 1.5px solid; border-radius: 18px; line-height: 0; padding: 8px 0px 6px; }
+.MathJax_MenuClose:hover { color: white !important; border: 2px solid rgb(204, 204, 204) !important; }
+.MathJax_MenuClose:hover span { background-color: rgb(204, 204, 204) !important; }
+.MathJax_MenuClose:hover:focus { outline: none; }
+.MathJax_Preview .MJXf-math { color: inherit !important; }
+.MJX_Assistive_MathML { top: 0px; left: 0px; clip: rect(1px 1px 1px 1px); user-select: none; position: absolute !important; padding: 1px 0px 0px !important; border: 0px !important; height: 1px !important; width: 1px !important; overflow: hidden !important; display: block !important; }
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block { width: 100% !important; }
+#MathJax_Zoom { position: absolute; background-color: rgb(240, 240, 240); overflow: auto; display: block; z-index: 301; padding: 0.5em; border: 1px solid black; margin: 0px; font-weight: normal; font-style: normal; text-align: left; text-indent: 0px; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-sizing: content-box; box-shadow: rgb(170, 170, 170) 5px 5px 15px; }
+#MathJax_ZoomOverlay { position: absolute; left: 0px; top: 0px; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0px; padding: 0px; margin: 0px; background-color: white; opacity: 0; }
+#MathJax_ZoomFrame { position: relative; display: inline-block; height: 0px; width: 0px; }
+#MathJax_ZoomEventTrap { position: absolute; left: 0px; top: 0px; z-index: 302; display: inline-block; border: 0px; padding: 0px; margin: 0px; background-color: white; opacity: 0; }
+.MathJax_Preview { color: rgb(136, 136, 136); }
+#MathJax_Message { position: fixed; left: 1em; bottom: 1.5em; background-color: rgb(230, 230, 230); border: 1px solid rgb(149, 149, 149); margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap; }
+#MathJax_MSIE_Frame { position: absolute; top: 0px; left: 0px; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px; }
+.MathJax_Error { color: rgb(204, 0, 0); font-style: italic; }
+.MJXp-script { font-size: 0.8em; }
+.MJXp-right { transform-origin: right center 0px; }
+.MJXp-bold { font-weight: bold; }
+.MJXp-italic { font-style: italic; }
+.MJXp-scr { font-family: MathJax_Script, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-frak { font-family: MathJax_Fraktur, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-sf { font-family: MathJax_SansSerif, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-cal { font-family: MathJax_Caligraphic, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-mono { font-family: MathJax_Typewriter, "Times New Roman", Times, STIXGeneral, serif; }
+.MJXp-largeop { font-size: 150%; }
+.MJXp-largeop.MJXp-int { vertical-align: -0.2em; }
+.MJXp-math { display: inline-block; line-height: 1.2; text-indent: 0px; font-family: "Times New Roman", Times, STIXGeneral, serif; white-space: nowrap; border-collapse: collapse; }
+.MJXp-display { display: block; text-align: center; margin: 1em 0px; }
+.MJXp-math span { display: inline-block; }
+.MJXp-box { text-align: center; display: block !important; }
+.MJXp-box::after { content: " "; }
+.MJXp-rule { margin-top: 0.1em; display: block !important; }
+.MJXp-char { display: block !important; }
+.MJXp-mo { margin: 0px 0.15em; }
+.MJXp-mfrac { margin: 0px 0.125em; vertical-align: 0.25em; }
+.MJXp-denom { width: 100%; display: inline-table !important; }
+.MJXp-surd { vertical-align: top; }
+.MJXp-mphantom { visibility: hidden; }
+.MJXp-munderover { display: inline-table !important; }
+.MJXp-over { text-align: center; display: inline-block !important; }
+.MJXp-mtable { vertical-align: 0.25em; margin: 0px 0.125em; }
+.MJXp-mtr { display: table-row !important; }
+.MJXp-mtd { text-align: center; padding: 0.5em 0px 0px 0.5em; display: table-cell !important; }
+.MJXp-mlabeledtr { display: table-row !important; }
+.MJXp-merror { background-color: rgb(255, 255, 136); color: rgb(204, 0, 0); border: 1px solid rgb(204, 0, 0); padding: 1px 3px; font-style: normal; font-size: 90%; }
+.MJXp-scale0 { transform: scaleX(0); }
+.MJXp-scale1 { transform: scaleX(0.1); }
+.MJXp-scale2 { transform: scaleX(0.2); }
+.MJXp-scale3 { transform: scaleX(0.3); }
+.MJXp-scale4 { transform: scaleX(0.4); }
+.MJXp-scale5 { transform: scaleX(0.5); }
+.MJXp-scale6 { transform: scaleX(0.6); }
+.MJXp-scale7 { transform: scaleX(0.7); }
+.MJXp-scale8 { transform: scaleX(0.8); }
+.MJXp-scale9 { transform: scaleX(0.9); }
+.MathJax_PHTML .noError { font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid; }
+.MathJax_Display { text-align: center; margin: 1em 0em; position: relative; text-indent: 0px; max-width: none; max-height: none; min-width: 0px; min-height: 0px; width: 100%; display: block !important; }
+.MathJax .merror { background-color: rgb(255, 255, 136); color: rgb(204, 0, 0); border: 1px solid rgb(204, 0, 0); padding: 1px 3px; font-style: normal; font-size: 90%; }
+.MathJax .MJX-monospace { font-family: monospace; }
+.MathJax .MJX-sans-serif { font-family: sans-serif; }
+#MathJax_Tooltip { background-color: infobackground; color: infotext; border: 1px solid black; box-shadow: rgb(170, 170, 170) 2px 2px 5px; padding: 3px 4px; z-index: 401; position: absolute; left: 0px; top: 0px; width: auto; height: auto; display: none; }
+.MathJax { display: inline; font-style: normal; font-weight: normal; line-height: normal; font-size: 100%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax:focus, body :focus .MathJax { display: inline-table; }
+.MathJax.MathJax_FullWidth { text-align: center; display: table-cell !important; width: 10000em !important; }
+.MathJax img, .MathJax nobr, .MathJax a { border: 0px; padding: 0px; margin: 0px; max-width: none; max-height: none; min-width: 0px; min-height: 0px; vertical-align: 0px; line-height: normal; text-decoration: none; }
+img.MathJax_strut { border: 0px !important; padding: 0px !important; margin: 0px !important; vertical-align: 0px !important; }
+.MathJax span { display: inline; position: static; border: 0px; padding: 0px; margin: 0px; vertical-align: 0px; line-height: normal; text-decoration: none; }
+.MathJax nobr { white-space: nowrap !important; }
+.MathJax img { display: inline !important; float: none !important; }
+.MathJax * { transition: none; }
+.MathJax_Processing { visibility: hidden; position: fixed; width: 0px; height: 0px; overflow: hidden; }
+.MathJax_Processed { display: none !important; }
+.MathJax_ExBox { overflow: hidden; width: 1px; height: 60ex; min-height: 0px; max-height: none; display: block !important; }
+.MathJax .MathJax_EmBox { overflow: hidden; width: 1px; height: 60em; min-height: 0px; max-height: none; display: block !important; }
+.MathJax_LineBox { display: table !important; }
+.MathJax_LineBox span { min-width: 0px; max-width: none; padding: 0px; border: 0px; margin: 0px; display: table-cell !important; width: 10000em !important; }
+.MathJax .MathJax_HitBox { cursor: text; background: white; opacity: 0; }
+.MathJax .MathJax_HitBox * { filter: none; opacity: 1; background: transparent; }
+#MathJax_Tooltip * { filter: none; opacity: 1; background: transparent; }
+.MathJax .noError { font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid; }]]></style></defs><g transform="translate(120,40)"><g class="x axis" transform="translate(0, 200)"><g class="tick" transform="translate(36,0)" style="opacity: 1;"><line y2="6" x2="0"/><text dy=".71em" y="9" x="0" style="text-anchor: middle;">-4</text></g><g class="tick" transform="translate(72,0)" style="opacity: 1;"><line y2="6" x2="0"/><text dy=".71em" y="9" x="0" style="text-anchor: middle;">-3</text></g><g class="tick" transform="translate(108,0)" style="opacity: 1;"><line y2="6" x2="0"/><text dy=".71em" y="9" x="0" style="text-anchor: middle;">-2</text></g><g class="tick" transform="translate(144,0)" style="opacity: 1;"><line y2="6" x2="0"/><text dy=".71em" y="9" x="0" style="text-anchor: middle;">-1</text></g><g class="tick" transform="translate(180,0)" style="opacity: 1;"><line y2="6" x2="0"/><text dy=".71em" y="9" x="0" style="text-anchor: middle;">0</text></g><g class="tick" transform="translate(216,0)" style="opacity: 1;"><line y2="6" x2="0"/><text dy=".71em" y="9" x="0" style="text-anchor: middle;">1</text></g><g class="tick" transform="translate(251.99999999999997,0)" style="opacity: 1;"><line y2="6" x2="0"/><text dy=".71em" y="9" x="0" style="text-anchor: middle;">2</text></g><g class="tick" transform="translate(288,0)" style="opacity: 1;"><line y2="6" x2="0"/><text dy=".71em" y="9" x="0" style="text-anchor: middle;">3</text></g><g class="tick" transform="translate(324,0)" style="opacity: 1;"><line y2="6" x2="0"/><text dy=".71em" y="9" x="0" style="text-anchor: middle;">4</text></g><path class="domain" d="M0,6V0H360V6"/></g><g class="y axis"><g class="tick" transform="translate(0,200)" style="opacity: 1;"><line x2="-6" y2="0"/><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.0</text></g><g class="tick" transform="translate(0,160)" style="opacity: 1;"><line x2="-6" y2="0"/><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.2</text></g><g class="tick" transform="translate(0,120)" style="opacity: 1;"><line x2="-6" y2="0"/><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.4</text></g><g class="tick" transform="translate(0,80)" style="opacity: 1;"><line x2="-6" y2="0"/><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.6</text></g><g class="tick" transform="translate(0,39.99999999999999)" style="opacity: 1;"><line x2="-6" y2="0"/><text dy=".32em" x="-9" y="0" style="text-anchor: end;">0.8</text></g><g class="tick" transform="translate(0,0)" style="opacity: 1;"><line x2="-6" y2="0"/><text dy=".32em" x="-9" y="0" style="text-anchor: end;">1.0</text></g><path class="domain" d="M-6,0H0V200H-6"/></g><path d="M0,198.66142981514304L0.8999999999999808,198.62777624590345L1.8000000000000256,198.59328256900096L2.6999999999999744,198.5579281173962L3.5999999999999868,198.5216917311436L4.5,198.48455174642783L5.400000000000013,198.44648598439701L6.299999999999993,198.40747173979165L7.1999999999999735,198.36748576936802L8.099999999999987,198.32650428011408L9,198.2845029172576L9.900000000000013,198.241456752065L10.800000000000026,198.19734026943044L11.699999999999976,198.15212735525424L12.599999999999985,198.10579128361078L13.5,198.05830470370518L14.400000000000013,198.00963962661913L15.300000000000026,197.95976741184606L16.200000000000006,197.90865875361638L17.099999999999987,197.8562836670134L18,197.80261147388137L18.900000000000013,197.74761078852686L19.800000000000026,197.69124950321554L20.699999999999974,197.63349477346625L21.60000000000002,197.57431300314514L22.5,197.5136698293628L23.39999999999998,197.4515301071777L24.300000000000026,197.3878578941094L25.200000000000006,197.32261643446705L26.099999999999987,197.25576814349623L27,197.1872745913509L27.900000000000016,197.11709648689578L28.799999999999997,197.0451936613454L29.699999999999978,196.97152505174753L30.599999999999987,196.89604868431823L31.499999999999996,196.81872165763704L32.40000000000001,196.73950012571183L33.300000000000026,196.65833928092235L34.199999999999974,196.57519333685445L35.09999999999999,196.49001551103512L36,196.4027580075817L36.90000000000001,196.31337199977804L37.80000000000001,196.2218076125922L38.700000000000024,196.12801390515048L39.59999999999999,196.0319388531845L40.5,195.93352933146826L41.40000000000001,195.8327310962639L42.299999999999976,195.72948876779589L43.19999999999999,195.6237458127739L44.10000000000002,195.51544452698747L45,195.40452601799487L45.89999999999998,195.2909301879319L46.80000000000001,195.17459571646617L47.700000000000024,195.05546004392485L48.59999999999998,194.93345935462565L49.50000000000001,194.8085285604406L50.40000000000001,194.68060128462682L51.299999999999976,194.5496098459568L52.19999999999999,194.4154852431854L53.09999999999999,194.2781571398908L54,194.13755384972873L54.900000000000006,193.99360232214235L55.80000000000001,193.8462281285704L56.69999999999999,193.69535544919972L57.599999999999994,193.5409070603099L58.5,193.38280432225918L59.40000000000001,193.22096716816438L60.30000000000001,193.0553140933285L61.200000000000024,192.88576214547274L62.09999999999999,192.71222691583196L62.99999999999999,192.5346225311741L63.90000000000002,192.35286164680835L64.79999999999998,192.16685544064714L65.69999999999999,191.9765136083909L66.60000000000002,191.781744359907L67.5,191.58245441687623L68.39999999999998,191.37854901178278L69.30000000000001,191.16993188832708L70.20000000000002,190.95650530334248L71.09999999999998,190.73817003029993L72,190.51482536448665L72.90000000000002,190.28636912994878L73.8,190.05269768828865L74.7,189.8137059494113L75.6,189.56928738431645L76.5,189.31933404003516L77.39999999999998,189.06373655681185L78.30000000000001,188.80238418763565L79.19999999999999,188.53516482022624L80.10000000000002,188.26196500158176L81,187.98266996519848L81.9,187.69716366107312L82.8,187.4053287886007L83.7,187.10704683248207L84.59999999999998,186.80219810175623L85.5,186.4906617720742L86.40000000000002,186.17231593133064L87.29999999999998,185.84703762877183L88.2,185.51470292769645L89.10000000000002,185.17518696186735L90,184.8283639957513L90.89999999999998,184.47410748870232L91.8,184.1122901632043L92.70000000000002,183.7427840772854L93.59999999999998,183.36546070121554L94.5,182.98019099859596L95.4,182.58684551194574L96.30000000000003,182.18529445288735L97.2,181.77540779702878L98.1,181.3570553836353L99.00000000000001,180.9301070201781L99.9,180.49443259184147L100.80000000000003,180.04990217606297L101.69999999999997,179.59638616217393L102.6,179.13375537619976L103.49999999999999,178.66188121086978L104.4,178.1806357608774L105.3,177.68989196342073L106.19999999999997,177.18952374404185L107.1,176.67940616777213L108,176.1594155955765L108.90000000000002,175.6294298460764L109.79999999999998,175.08932836251674L110.7,174.53899238492565L111.60000000000002,173.97830512740043L112.5,173.40715196043413L113.39999999999998,172.82542059818115L114.3,172.23300129053857L115.20000000000002,171.62978701990244L116.09999999999998,171.01567370243544L117,170.3905603936621L117.9,169.75434949818515L118.80000000000003,169.10694698329306L119.7,168.448262596206L120.6,167.77821008468297L121.50000000000001,167.09670742068735L122.4,166.4036770267849L123.30000000000003,165.69904600491984L124.19999999999997,164.98274636719205L125.1,164.25471526822992L125.99999999999999,163.51489523872874L126.9,162.76323441969828L127.8,161.99968679693743L128.7,161.22421243522805L129.6,160.43677771171636L130.5,159.63735554792424L131.4,158.82592563981052L132.29999999999998,158.0024746852795L133.2,157.1669966085117L134.10000000000002,156.3194927804731L135,155.45997223493825L135.89999999999998,154.5884518793477L136.8,153.70495669980352L137.70000000000002,152.8095199594932L138.6,151.90218338982223L139.5,150.98299737352565L140.4,150.05202111902352L141.3,149.10932282528054L142.20000000000002,148.15497983643078L143.1,147.1890787854297L144,146.211715726001L144.9,145.2229962521558L145.80000000000004,144.2230356045726L146.69999999999996,143.21195876314198L147.6,142.18990052500084L148.5,141.15700556740225L149.4,140.1134284947946L150.29999999999998,139.05933386951307L151.2,137.9948962255225L152.1,136.92030006468616L153,135.83573983507858L153.9,134.74141989090427L154.79999999999995,133.63755443363326L155.7,132.5243674340165L156.59999999999997,131.40209253469973L157.5,130.27097293321086L158.40000000000003,129.13126124515907L159.3,127.98321934754684L160.20000000000005,126.82711820216011L161.1,125.66323765907326L162,124.49186624037092L162.9,123.31330090426384L163.8,122.12784678984438L164.70000000000002,120.93581694280186L165.6,119.7375320224904L166.5,118.53331999081394L167.4,117.32351578346601L168.30000000000004,116.1084609641319L169.19999999999996,114.88850336233183L170.1,113.66399669564964L171,112.43530017715962L171.9,111.20277810892398L172.79999999999998,109.96679946249559L173.7,108.72773744741579L174.6,107.48596906874992L175.5,106.24187467475123L176.4,104.99583749578798L177.29999999999995,103.74824317570707L178.2,102.49947929684207L179.09999999999997,101.24993489990209L180,100L180.89999999999998,98.75006510009794L181.8,97.50052070315793L182.7,96.25175682429298L183.6,95.00416250421202L184.49999999999997,93.75812532524874L185.4,92.51403093125006L186.29999999999998,91.27226255258425L187.20000000000002,90.03320053750441L188.1,88.79722189107602L189,87.56469982284038L189.89999999999998,86.33600330435041L190.8,85.11149663766817L191.7,83.8915390358681L192.60000000000002,82.67648421653398L193.5,81.46668000918605L194.4,80.26246797750957L195.29999999999998,79.06418305719814L196.20000000000002,77.87215321015559L197.1,76.68669909573616L198.00000000000003,75.50813375962908L198.9,74.33676234092674L199.8,73.17288179783984L200.7,72.01678065245316L201.60000000000002,70.86873875484088L202.5,69.72902706678916L203.39999999999998,68.59790746530025L204.3,67.4756325659835L205.2,66.36244556636682L206.1,65.25858010909573L206.99999999999997,64.1642601649214L207.9,63.07969993531384L208.79999999999998,62.0051037744775L209.70000000000002,60.94066613048692L210.6,59.886571505205424L211.5,58.84299443259775L212.39999999999998,57.81009947499922L213.3,56.78804123685799L214.2,55.776964395427406L215.10000000000002,54.777003747844155L216,53.78828427399902L216.9,52.81092121457029L217.79999999999998,51.845020163569224L218.70000000000002,50.89067717471947L219.6,49.94797888097651L220.50000000000003,49.01700262647435L221.4,48.0978166101778L222.3,47.19048004050676L223.2,46.29504330019645L224.10000000000002,45.41154812065229L225,44.54002776506179L225.89999999999998,43.68050721952692L226.8,42.833003391488276L227.7,41.99752531472054L228.6,41.17407436018949L229.49999999999997,40.362644452075756L230.4,39.56322228828364L231.29999999999998,38.77578756477196L232.20000000000002,38.00031320306259L233.1,37.236765580301714L234,36.48510476127127L234.89999999999998,35.74528473177012L235.8,35.01725363280794L236.7,34.3009539950802L237.60000000000002,33.59632297321509L238.5,32.90329257931261L239.4,32.22178991531705L240.29999999999998,31.551737403794L241.20000000000002,30.89305301670695L242.1,30.245650501814847L243.00000000000003,29.609439606337883L243.9,28.98432629756458L244.8,28.37021298009754L245.7,27.766998709461443L246.60000000000002,27.174579401818843L247.5,26.592848039565876L248.39999999999998,26.021694872599575L249.3,25.46100761507435L250.2,24.910671637483283L251.1,24.37057015392361L251.99999999999997,23.840584404423538L252.9,23.320593832227885L253.79999999999998,22.81047625595818L254.70000000000002,22.31010803657929L255.6,21.819364239122585L256.5,21.338118789130256L257.4,20.866244623800267L258.3,20.40361383782605L259.2,19.950097823937043L260.1,19.505567408158498L261,19.06989297982189L261.90000000000003,18.64294461636473L262.8,18.224592202971234L263.7,17.81470554711264L264.6,17.41315448805427L265.5,17.019809001404052L266.4,16.634539298784468L267.3,16.257215922714565L268.2,15.887709836795683L269.1,15.525892511297702L270,15.17163600424869L270.9,14.824813038132634L271.8,14.485297072303549L272.7,14.152962371228138L273.6,13.827684068669388L274.5,13.509338227925817L275.4,13.197801898243755L276.3,12.892953167517929L277.2,12.5946712113993L278.09999999999997,12.302836338926904L279,12.017330034801521L279.9,11.738034998418257L280.8,11.464835179773747L281.7,11.197615812364337L282.6,10.936263443188166L283.5,10.680665959964863L284.40000000000003,10.430712615683536L285.3,10.186294050588707L286.2,9.947302311711326L287.1,9.713630870051237L288,9.485174635513328L288.9,9.261829969700063L289.8,9.043494696657506L290.69999999999993,8.830068111672906L291.6000000000001,8.621450988217227L292.5,8.417545583123776L293.3999999999999,8.21825564009302L294.30000000000007,8.023486391609126L295.2,7.833144559352867L296.1,7.647138353191618L297,7.465377468825873L297.9,7.287773084168037L298.79999999999995,7.114237854527228L299.7,6.944685906671522L300.59999999999997,6.77903283183563L301.5,6.617195677740839L302.40000000000003,6.459092939690114L303.3,6.304644550800287L304.2,6.153771871429603L305.09999999999997,6.0063976778576444L306,5.862446150271272L306.90000000000003,5.721842860109216L307.8,5.584514756814585L308.70000000000005,5.450390154043205L309.6,5.319398715373191L310.5,5.191471439559381L311.4,5.066540645374329L312.3,4.9445399560751335L313.19999999999993,4.825404283533841L314.1000000000001,4.70906981206809L315,4.595473982005127L315.8999999999999,4.484555473012564L316.80000000000007,4.376254187226114L317.7,4.2705112322040994L318.6,4.167268903736088L319.5,4.066470668531763L320.4,3.9680611468154936L321.29999999999995,3.871986094849511L322.2,3.7781923874078194L323.09999999999997,3.68662800022197L324,3.5972419924183097L324.90000000000003,3.509984488964868L325.8,3.42480666314553L326.7,3.3416607190776437L327.59999999999997,3.2604998742881808L328.5,3.1812783423629476L329.40000000000003,3.1039513156817744L330.3,3.0284749482524465L331.20000000000005,2.954806338654614L332.1,2.882903513104207L333,2.8127254086491194L333.9,2.744231856503787L334.8,2.677383565532976L335.69999999999993,2.6121421058906247L336.6000000000001,2.5484698928223137L337.5,2.4863301706371743L338.3999999999999,2.425686996854859L339.30000000000007,2.366505226533766L340.2,2.3087504967844508L341.1,2.252389211473149L342,2.1973885261186377L342.9,2.1437163329866227L343.79999999999995,2.091341246383638L344.7,2.040232588153934L345.59999999999997,1.9903603733808506L346.5,1.9416952962948208L347.40000000000003,1.894208716389234L348.3,1.8478726447457516L349.2,1.802659730569589L350.09999999999997,1.758543247934985L351,1.7154970827423899L351.90000000000003,1.6734957198859313L352.8,1.6325142306319762L353.70000000000005,1.592528260208348L354.6,1.5535140156030192L355.5,1.5154482535721492L356.4,1.4783082688563765L357.3,1.4420718826037904L358.19999999999993,1.4067174309990271L359.1000000000001,1.3722237540965354"/><text class="x label" text-anchor="end" x="180" y="235">z</text></g></svg>

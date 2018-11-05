@@ -1,0 +1,197 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{graphicx}
+\setlength{\parskip}{2pt}
+
+\author{Emmanuel Rachelson}
+\title{Pre-class activities\\Support Vector Machines and Kernels}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Quadratic programming}
+
+%% Consider the (very academic!) optimization problem:
+%% \begin{gather*}
+%% \min_{x\in \mathbb{R}^n} \frac{1}{2}\|x\|^2\\
+%% s.t. \ \forall j=1...N, \quad a_j^T x \leq c_j
+%% \end{gather*}
+%% You should recognize a quadratic programming problem here.\\
+%% \noindent \ding{43} Write down the problem's Lagrangian.\\
+%% \noindent \ding{43} Why are the constraints qualified?\\
+%% \noindent \ding{43} Write Karush-Kuhn-Tucker's first order conditions. Recall what they mean.
+
+Suppose a collection of $N$ pairs $\{(x_i,y_i)\}_{i=1..N}$ with $x_i\in \mathbb{R}^n$ and $y_i \in \{-1;1\}$ and consider the following optimization problem:
+\begin{gather*}
+\min_{w\in\mathbb{R}^n} \frac{1}{2}\|w\|^2\\
+s.t. \ \forall j=1...N, \quad y_i \left( w^T x_i \right) \leq 1
+\end{gather*}
+
+\noindent \ding{43} Recall the name of this type of optimization problem.
+
+{\it It is a continous, twice differentiable optimization problem over the $w$ variables. Moreover, the objective function is quadratic while the constraints are linear: it is a Quadratic Programming (QP) problem.}
+
+\noindent \ding{43} Write down the problem's Lagrangian.
+
+{\it Let $\alpha_i$ be the Karush-Kuhn-Tucker coefficient associated to the constraint $y_i \left( w^T x_i \right) -1 \leq 0$. Then:
+\begin{equation*}
+L(w,\alpha) = \frac{1}{2}\|w\|^2 - \sum\limits_{i=1}^N \alpha_i \left( y_i \left( w^T x_i \right) -1 \right)
+\end{equation*}
+}
+
+\noindent \ding{43} Why are the constraints qualified?
+
+{\it The constraints are linear, thus qualified.}
+
+\noindent \ding{43} Write Karush-Kuhn-Tucker's first order conditions. Recall what they mean.
+
+{\it KKT first order conditions provide a necessary optimality condition. They state that:
+\begin{equation*}
+w^* \textrm{ is a solution} \Rightarrow \exists \alpha^*\in {\mathbb{R}^+}^N \ s.t. \left\{ \begin{array}{l}
+\frac{\partial L}{\partial w} (w^*, \alpha^*) = 0 \\
+\forall i \in [1,N], \quad \alpha_i \left( y_i \left( w^T x_i \right) -1 \right) = 0
+\end{array} \right.
+\end{equation*}
+In other words, if one can find a pair $(w^*,\alpha^*) \in \mathbb{R}^n \times {\mathbb{R}^+}^N$ that verifies the right-hand side equations of the line above, then it is a candidate optimal solution.
+
+In this particular case, one has a convex objective function and convex constraints, so KKT first order necessary condition is also a sufficient condition.
+
+The condition writes:
+\begin{equation*}
+\left\{\begin{array}{l}
+w - \sum\limits_{i=1}^N \alpha_i y_i x_i = 0\\
+\forall i \in [1,N], \quad \alpha_i \left( y_i \left( w^T x_i \right) -1 \right) = 0\\
+\forall i \in [1,N], \quad \alpha_i\geq 0
+\end{array}\right.
+\end{equation*}
+}
+
+\noindent \ding{43} Recall the duality theorem in Differentiable Optimization and write the dual form of the above optimization problem.
+
+{\it The duality theorem states that if the objective function and constraints are convex, and if the constraints are qualified, then the solution to the dual problem $\sup_{\alpha \geq 0} \inf_{w} L(w, \alpha)$ is the solution to the optimization problem.
+
+By using the first equation in the first order conditions above, one obtains $w = \sum\limits_{i=1}^N \alpha_i y_i x_i$. Consequently, the dual function $L_D(\alpha)$ writes:
+\begin{equation*}
+L_D(\alpha) = \frac{1}{2} \left\| \sum\limits_{i=1}^N \alpha_i y_i x_i \right\|^2 - \sum\limits_{i=1}^N \alpha_i \left( y_i \left( \left(\sum\limits_{j=1}^N \alpha_j y_j x_j\right)^T x_i \right) -1 \right)
+\end{equation*}
+
+The first term becomes:
+\begin{align*}
+\frac{1}{2} \left\| \sum\limits_{i=1}^N \alpha_i y_i x_i \right\|^2 & = \frac{1}{2} \left( \sum\limits_{i=1}^N \alpha_i y_i x_i \right)^T \left( \sum\limits_{j=1}^N \alpha_j y_j x_j \right) \\
+& =\frac{1}{2} \sum\limits_{i=1}^N \sum\limits_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^T x_j
+\end{align*}
+
+While the second term yields:
+\begin{equation*}
+\sum\limits_{i=1}^N \alpha_i \left( y_i \left( \left(\sum\limits_{j=1}^N \alpha_j y_j x_j\right)^T x_i \right) -1 \right) = -\sum\limits_{i=1}^N \sum\limits_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^T x_j + \sum\limits_{i=1}^N \alpha_i
+\end{equation*}
+
+And thus:
+\begin{equation*}
+L_D(\alpha) = -\frac{1}{2} \sum\limits_{i=1}^N \sum\limits_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^T x_j + \sum\limits_{i=1}^N \alpha_i
+\end{equation*}
+
+Finally, solving the dual problem boils down to solving:
+\begin{equation*}
+\sup_{\alpha \geq 0} \left[-\frac{1}{2} \sum\limits_{i=1}^N \sum\limits_{j=1}^N \alpha_i \alpha_j y_i y_j x_i^T x_j + \sum\limits_{i=1}^N \alpha_i \right]
+\end{equation*}
+}
+
+\section{Insensitive Least squares regression}
+
+Suppose a collection of $N$ points $\{(x_i,y_i)\}_{i=1..N}$ with $x_i\in \mathbb{R}^n$ and $y_i \in \mathbb{R}$ and consider the associated regression problem. Suppose also that a family of functions $\Phi=\{\phi_j\}_{j=1..p}, \ \phi_j:\mathbb{R}^n \rightarrow \mathbb{R}$ is provided and that the solution to the regression problem should lie in the space spanned by $\Phi$ (that is, the regression function $f$ should have the form $f=\sum_{j=1}^p w_j \phi_j$).
+
+\noindent \ding{43} Write the regression problem as a least squares minimization problem.
+
+{\it Under the least squares fitting criterion, the regression problem can be written:
+\begin{equation*}
+\min_{w \in \mathbb{R}^p} \sum\limits_{i=1}^N \left(y_i - \sum_{j=1}^p w_j \phi_j(x_i) \right)^2
+\end{equation*}
+
+%Let $y$ be the vector of all $y_i$ values, let 
+Or in vector form:
+\begin{equation*}
+\min_{w \in \mathbb{R}^p} \left\| y - w^T \phi(x) \right\|^2
+\end{equation*}
+}
+
+Consider the data plotted in Figure \ref{fig:3}. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=8cm]{img/example4.pdf}
+\end{center}
+\caption{Regression data}
+\label{fig:3}
+\end{figure}
+
+Apart from the outlier at $x=1.05$, the data fits the $y=x$ relation perfectly.
+%However, a least squares regression will not find the $y=x$ relation because of this outlier point.
+In this case, advanced feature functions do not seem necessary, so the $j$th feature is actually the $j$th component of $x$. Thus the problem is a simple $y=w^Tx$ regression problem.
+
+\noindent \ding{43} Can you think of a formulation of the regression problem that would be robust to noise? For example, that would discard any noisy point that stays inside a ``tube'' of width $\epsilon$ around the inferred function?
+
+\section{The trick of the additional dimension}
+
+Consider the following test data where $x$ is a voltage measurement and $y$ indicates whether an electronic component failed under that voltage:
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$x$ & 0.3 & 0.7 & 1.1 & 1.8 & 2.5 & 3.0 & 3.3 & 3.5 & 3.7 \\
+\hline
+$y$ & -1  & -1  &  -1 &  1  &  1  &  1  & 1   & -1  & -1\\
+\hline
+\end{tabular}
+
+\noindent \ding{43} Figure \ref{fig:1} shows a graphical display of the above data set. One wishes to linearly separate the data. What is the (very naive) general form of a linear classifier on this data ? What is the best training error one can obtain with such a classifier ? 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=8cm]{img/example1.pdf}
+\end{center}
+\label{fig:1}
+\caption{Raw measurements}
+\end{figure}
+
+{\it A linear classifier splits the data based on the simple rule $class=sign(w^T x)$. In this case, since $x$ is unidimensional, $w$ is a scalar.
+
+Based on Figure \ref{fig:1}, the best training error one can obtain is 2 misclassified examples out of 9 (22\%).
+}
+
+A smart engineer decides to plot the same data but enriches the description by adding a second axis representing $(2-x)^2$. The data set becomes:
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$z_1=x$ & 0.3 & 0.7 & 1.1 & 1.8 & 2.5 & 3.0 & 3.3 & 3.5 & 3.7 \\
+\hline
+$z_2=(2-x)^2$ & 2.89 & 1.69 & 0.81 & 0.04 & 0.25 & 1 & 1.69 & 2.25 & 2.89\\
+\hline
+$y$ & -1  & -1  &  -1 &  1  &  1  &  1  & 1   & -1  & -1\\
+\hline
+\end{tabular}
+The new graphical representation is displayed on Figure \ref{fig:2}.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=8cm]{img/example2.pdf}
+\end{center}
+\label{fig:2}
+\caption{Enriched representation}
+\end{figure}
+
+\noindent \ding{43} Did that operation seem to help the linear classification task? What lessons can one draw?
+
+{\it Figure \ref{fig:2} presents data that is linearly separable. Thus, the introduction of $z=(z_1,z_2)$ allowed to transform a data set which was not linearly separable into a dataset that was. This illustrates the importance of feature engineering for any machine learning task. Furthermore, it illustrates the interest of enriching the data representation in order to ``send'' data such as $x$ in a space of larger dimension (such as the space of $z$) where its representation is easier.
+}
+
+
+
+\end{document}

@@ -1,0 +1,115 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{graphicx}
+\setlength{\parskip}{2pt}
+
+\author{Emmanuel Rachelson}
+\title{Pre-class activities\\Support Vector Machines and Kernels}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Quadratic programming}
+
+%% Consider the (very academic!) optimization problem:
+%% \begin{gather*}
+%% \min_{x\in \mathbb{R}^n} \frac{1}{2}\|x\|^2\\
+%% s.t. \ \forall j=1...N, \quad a_j^T x \leq c_j
+%% \end{gather*}
+%% You should recognize a quadratic programming problem here.\\
+%% \noindent \ding{43} Write down the problem's Lagrangian.\\
+%% \noindent \ding{43} Why are the constraints qualified?\\
+%% \noindent \ding{43} Write Karush-Kuhn-Tucker's first order conditions. Recall what they mean.
+
+Suppose a collection of $N$ pairs $\{(x_i,y_i)\}_{i=1..N}$ with $x_i\in \mathbb{R}^n$ and $y_i \in \{-1;1\}$ and consider the following optimization problem:
+\begin{gather*}
+\min_{w\in\mathbb{R}^n} \frac{1}{2}\|w\|^2\\
+s.t. \ \forall j=1...N, \quad y_i \left( w^T x_i \right) \leq 1
+\end{gather*}
+
+\noindent \ding{43} Recall the name of this type of optimization problem.
+
+\noindent \ding{43} Write down the problem's Lagrangian.
+
+\noindent \ding{43} Why are the constraints qualified?
+
+\noindent \ding{43} Write Karush-Kuhn-Tucker's first order conditions. Recall what they mean.
+
+\noindent \ding{43} Recall the duality theorem in Differentiable Optimization and write the dual form of the above optimization problem.
+
+\section{Insensitive Least squares regression}
+
+Suppose a collection of $N$ points $\{(x_i,y_i)\}_{i=1..N}$ with $x_i\in \mathbb{R}^n$ and $y_i \in \mathbb{R}$ and consider the associated regression problem. Suppose also that a family of functions $\Phi=\{\phi_j\}_{j=1..p}, \ \phi_j:\mathbb{R}^n \rightarrow \mathbb{R}$ is provided and that the solution to the regression problem should lie in the space spanned by $\Phi$ (that is, the regression function $f$ should have the form $f=\sum_{j=1}^p w_j \phi_j$).
+
+\noindent \ding{43} Write the regression problem as a least squares minimization problem.
+
+Consider the data plotted in Figure \ref{fig:3}. 
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=8cm]{img/example4.pdf}
+\end{center}
+\caption{Regression data}
+\label{fig:3}
+\end{figure}
+
+Apart from the outlier at $x=1.05$, the data fits the $y=x$ relation perfectly.
+%However, a least squares regression will not find the $y=x$ relation because of this outlier point.
+In this case, advanced feature functions do not seem necessary, so the $j$th feature is actually the $j$th component of $x$. Thus the problem is a simple $y=w^Tx$ regression problem.
+
+\noindent \ding{43} Can you think of a formulation of the regression problem that would be robust to noise? For example, that would discard any noisy point that stays inside a ``tube'' of width $\epsilon$ around the inferred function?
+
+\section{The trick of the additional dimension}
+
+Consider the following test data where $x$ is a voltage measurement and $y$ indicates whether an electronic component failed under that voltage:
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$x$ & 0.3 & 0.7 & 1.1 & 1.8 & 2.5 & 3.0 & 3.3 & 3.5 & 3.7 \\
+\hline
+$y$ & -1  & -1  &  -1 &  1  &  1  &  1  & 1   & -1  & -1\\
+\hline
+\end{tabular}
+
+\noindent \ding{43} Figure \ref{fig:1} shows a graphical display of the above data set. One wishes to linearly separate the data. What is the (very naive) general form of a linear classifier on this data ? What is the best training error one can obtain with such a classifier ? 
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=8cm]{img/example1.pdf}
+\end{center}
+\label{fig:1}
+\caption{Raw measurements}
+\end{figure}
+
+A smart engineer decides to plot the same data but enriches the description by adding a second axis representing $(2-x)^2$. The data set becomes:
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+$z_1=x$ & 0.3 & 0.7 & 1.1 & 1.8 & 2.5 & 3.0 & 3.3 & 3.5 & 3.7 \\
+\hline
+$z_2=(2-x)^2$ & 2.89 & 1.69 & 0.81 & 0.04 & 0.25 & 1 & 1.69 & 2.25 & 2.89\\
+\hline
+$y$ & -1  & -1  &  -1 &  1  &  1  &  1  & 1   & -1  & -1\\
+\hline
+\end{tabular}
+The new graphical representation is displayed on Figure \ref{fig:2}.
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=8cm]{img/example2.pdf}
+\end{center}
+\label{fig:2}
+\caption{Enriched representation}
+\end{figure}
+
+\noindent \ding{43} Did that operation seem to help the linear classification task? What lessons can one draw?
+
+\end{document}
