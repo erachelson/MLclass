@@ -1,0 +1,3 @@
+[submodule "Practice/Deep Neural Networks"]
+	path = Practice/Deep Neural Networks
+	url = git@github.com:fchouteau/isae-practical-deep-learning.git
