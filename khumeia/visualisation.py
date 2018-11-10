@@ -1,18 +1,19 @@
 import cv2
 from khumeia.utils import list_utils
-from khumeia.roi.tile import LabelledTile, Tile, PredictionTile
+from khumeia.roi.tile import BoundingBox, LabelledTile, Tile, PredictionTile
 
 
 def draw_bbox_on_image(image, bbox, color=(0, 255, 0), thickness=2):
     """
-
+    Draw one BoundingBox to an image using cv2.rectangle
     Args:
-        image:
-        bbox:
-        color:
-        thickness:
+        image(np.ndarray): A (h,w,3) 8-bit array representing the image
+        bbox(BoundingBox):
+        color: A tuple (r,g,b) [0,255]
+        thickness(int): A thickness value
 
     Returns:
+        The same `image` but with the bounding box drawn on it
 
     """
     cv2.rectangle(image, (bbox.x_min, bbox.y_min), (bbox.x_max, bbox.y_max), color=color, thickness=thickness)
@@ -21,7 +22,7 @@ def draw_bbox_on_image(image, bbox, color=(0, 255, 0), thickness=2):
 
 def draw_bboxes_on_image(image, bboxes, color=(0, 255, 0), thickness=2):
     """
-
+    Draw one BoundingBox to an image using cv2.rectangle
     Args:
         image:
         bboxes:

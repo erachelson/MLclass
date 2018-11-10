@@ -62,7 +62,7 @@ def download_eval_data(data_dir=None):
     LOGGER.info("Done. Your data is located here {}\n".format(os.path.join(data_dir, "raw")))
 
 
-def download_test_ci_data(data_dir=None):
+def _download_test_ci_data(data_dir=None):
     """
     Reserved for CI
     Args:
