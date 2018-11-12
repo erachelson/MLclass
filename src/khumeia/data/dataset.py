@@ -4,22 +4,24 @@ from tqdm.autonotebook import tqdm
 
 from khumeia.utils import io, list_utils
 from khumeia import LOGGER
+from khumeia.data.item import Item
+from khumeia.data.sliding_window import SlidingWindow
 from khumeia.data.sampler import TilesSampler
 
 
 class TilesDataset(object):
     """
     A tiles dataset is a container for "tiles" on items
-    It is used to apply sliding windows on full images to generate candidates
-    then sample
-    then output data to keras format
+    It is used to apply sliding windows on full images to generate candidates of tiles
+    then a list of tiles is sampled with certains rules
+    this list is then dumped in .jpg in a keras.ImageDataGenerator compatible format (/label_n/ folders with images)
     """
 
     def __init__(self, items):
         """
-
+            Initialise the TilesDataset with the satellite images to parse
         Args:
-            items:
+            items (list[Item])): the list of items in the dataset
         """
         self.items = items
         self.sliding_windows = list([])
@@ -30,11 +32,12 @@ class TilesDataset(object):
 
     def generate_candidates_tiles(self, sliding_windows):
         """
-
+            Apply a sliding window over each satellite image to generate a list of tiles (= regions of interest) to sample from
         Args:
-            sliding_windows(list[khumeia.data.sliding_window.SlidingWindow]|khumeia.data.sliding_window.SlidingWindow):
+            sliding_windows(list[SlidingWindow]|SlidingWindow):
 
         Returns:
+            in place (assign self.candidate_tiles)
 
         """
         if not isinstance(sliding_windows, (list, tuple)):
@@ -61,12 +64,12 @@ class TilesDataset(object):
 
     def sample_tiles_from_candidates(self, tiles_samplers):
         """
-
+            Apply a sampler over each satellite image's candidate tiles to generate a list of tiles (= regions of interest)
         Args:
             tiles_samplers(list[TilesSampler]|TilesSampler):
 
         Returns:
-
+            in place. assign self.sampled_tiles
         """
         sampled_tiles = []
 
@@ -84,10 +87,30 @@ class TilesDataset(object):
 
     def generate_tiles_dataset(self, output_dir=None, save_format="jpg", remove_first=True):
         """
+            Actually generates training images from the dataset.sampled_tiles (= regions of interest)
+            The filestructure is compatible with keras.ImageDataGenerator.flow_from_directory() method
+
+            For more information on how to parse this, check this script:
+
+            https://gist.github.com/fchollet/0830affa1f7f19fd47b06d4cf89ed44d
+
+            In summary, this is our directory structure:
+
+            ```markdown
+            output_dir/
+                aircrafts/
+                    ac001.jpg
+                    ac002.jpg
+                    ...
+                background/
+                    bg001.jpg
+                    bg002.jpg
+                    ...
+            ```
 
         Args:
-            output_dir:
-            save_format: "jpg"
+            output_dir(str): the output path
+            save_format: "jpg" the image format
             remove_first(bool): erase output dir first?
 
         Returns:

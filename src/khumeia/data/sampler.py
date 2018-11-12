@@ -3,6 +3,7 @@ import random
 import numpy as np
 from khumeia import LOGGER
 from khumeia.utils import list_utils
+from khumeia.roi.tile import Tile
 
 random.seed(2018)
 np.random.seed(2018)
@@ -10,14 +11,59 @@ np.random.seed(2018)
 
 class TilesSampler(object):
     """
+    A Sampler takes as input a list of tiles and outputs a transformed list of tiles, after application of a sampling
+    logic. See https://en.wikipedia.org/wiki/Sampling_(statistics)
+
+    Writing our own sampler:
+
+    You have to write `sample_tiles_from_candidates(self, candidate_tiles)`
+
+    Example:
+        make use of the list filters utils
+
+        ```python
+        from khumeia.utils import list_utils
+
+            def sample_tiles_from_candidates(self, candidate_tiles):
+        sampled_tiles = []
+        item_keys = list_utils.get_items_in_list(candidate_tiles)
+
+        for item_key in item_keys:
+            candidate_tiles_ = list_utils.filter_tiles_by_item(candidate_tiles, item_key)
+            if self.target_label is not None:
+                candidate_tiles_ = list_utils.filter_tiles_by_label(candidate_tiles_, self.target_label)
+
+            nb_tiles_max = int((self.nb_tiles_max or len(candidate_tiles_)) / len(item_keys))
+
+            sampled_tiles.extend(self._sample_n_tiles_from_list(candidate_tiles_, nb_tiles_max))
+
+        return sampled_tiles
+        ```
 
     """
 
     def __init__(self, with_replacement=False, shuffle=True):
+        """
+
+        Args:
+            with_replacement (bool):  We will sample with replacement
+            shuffle (bool): Shuffle the input list of tiles first
+        """
         self.with_replacement = with_replacement
         self.shuffle = shuffle
 
     def _sample_n_tiles_from_list(self, tiles, nb_tiles_max):
+        """
+        Select `nb_tiles_max` tiles from the list `tiles`. If `with_replacement`, then selects exactly this amount,
+        else selects min(len(tiles),nb_tiles_max))
+        If shuffle: shuffle the list of tiles
+        Args:
+            tiles(list[Tile]): List of tiles to sample from
+            nb_tiles_max (int): Nb of tiles max to sample
+
+        Returns:
+            The sampled list of tiles
+        """
         nb_candidates = len(tiles)
         tiles_idx = list(range(nb_candidates))
 
@@ -30,6 +76,14 @@ class TilesSampler(object):
         return [tiles[tiles_idx[idx % nb_candidates]] for idx in range(nb_tiles_max)]
 
     def sample_tiles_from_candidates(self, candidate_tiles):
+        """
+        Apply the sampling logic of this class to a list of `candidates`
+        Args:
+            candidate_tiles(list[Tiles]): List of regions of interest to apply the sampler on
+
+        Returns:
+            list[Tiles]: Sampled list
+        """
         raise NotImplementedError
 
     def __str__(self):
@@ -48,12 +102,26 @@ class RandomSampler(TilesSampler):
     """
 
     def __init__(self, nb_tiles_max=None, with_replacement=False, shuffle=True, target_label=None):
+        """
+
+        Args:
+            nb_tiles_max(int):
+            target_label(str|None):  Allow targeting a specific label
+        """
         super(RandomSampler, self).__init__(with_replacement=with_replacement, shuffle=shuffle)
         self.nb_tiles_max = nb_tiles_max
         self.with_replacement = with_replacement
         self.target_label = target_label
 
     def sample_tiles_from_candidates(self, candidate_tiles):
+        """
+        Apply the sampling logic of this class to a list of `candidates`
+        Args:
+            candidate_tiles(list[Tiles]): List of regions of interest to apply the sampler on
+
+        Returns:
+            list[Tiles]: Sampled list
+        """
         LOGGER.info("Sampling")
 
         if self.target_label is not None:

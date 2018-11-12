@@ -6,6 +6,16 @@ from khumeia.roi.tile import LabelledTile
 class SlidingWindow(object):
     """
 
+    ![example1](https://cdn-images-1.medium.com/max/800/1*FHEOyHm1BTWyygQcgvNSXQ.png)
+
+    Sample cutouts of a sliding window iterating from top to bottom (Imagery Courtesy of DigitalGlobe)
+
+    ![example2](https://cdn-images-1.medium.com/max/800/1*BkQLxT_FVz6XqHul5qezEw.gif)
+
+    Sliding window shown iterating across an image (left).
+    An image classifier is applied to these cutouts and anything resembling a boat is saved as a positive (right)
+    (Imagery Courtesy of DigitalGlobe)
+
     """
 
     def __init__(self,

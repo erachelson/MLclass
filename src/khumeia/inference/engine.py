@@ -6,7 +6,7 @@ from khumeia.roi.tile import PredictionTile
 
 class InferenceEngine(object):
     """
-
+    ![](https://cdn-images-1.medium.com/max/1600/1*uLk0eLyS8sYCqXTgEYcO6w.png)
     """
 
     def __init__(self, items):
