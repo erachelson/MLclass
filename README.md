@@ -11,7 +11,9 @@ Should you want to continue this at home you can use Google Collaboratory instan
 
 ## Installation
 
-Just install the framework (it was design on python 3.5+ so support is not guaranteed on python 2.7) with pip: `pip install git+https://github.com/fchouteau/isae-practical-deep-learning.git#egg=khumeia&\subdirectory=src`.
+Just install the framework (it was design on python 3.5+ so support is not guaranteed on python 2.7) with pip: 
+`pip install git+https://github.com/fchouteau/isae-practical-deep-learning.git#egg=khumeia\&subdirectory=src`
+
 
 The `khumeia` framework aims at facilitating interaction with data before and after training your models, as well as mocking up larger scale inference on full images. It is based on remote sensing imagery and tiles classification.
 
