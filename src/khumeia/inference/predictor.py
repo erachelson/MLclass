@@ -16,6 +16,7 @@ class Predictor(object):
     def predict(self, tile_data):
         """
         receives a numpy array, returns the label
+        This should encapsulate preprocessing + self.model.predict() where self.model is the loaded keras model
         Args:
             tile_data(np.ndarray):
 
@@ -28,6 +29,7 @@ class Predictor(object):
     def predict_on_batch(self, tiles_data):
         """
         If you want to implement batching
+        This should encapsulate preprocessing + self.model.predict_on_batch() where self.model is the loaded keras model
         Args:
             tiles_data(list[np.ndarray]): A list of images
 

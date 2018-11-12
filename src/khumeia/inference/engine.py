@@ -1,11 +1,13 @@
-import time
 from khumeia import LOGGER
 from tqdm.autonotebook import tqdm
 from khumeia.roi.tile import PredictionTile
+from khumeia.inference.predictor import Predictor
 
 
 class InferenceEngine(object):
     """
+    Classe qui se comporte comme `Dataset` mais donne accès à la prédiction sur chaque tuile à l'aide d'une fenêtre glissante
+
     ![](https://cdn-images-1.medium.com/max/1600/1*uLk0eLyS8sYCqXTgEYcO6w.png)
     """
 
@@ -14,6 +16,16 @@ class InferenceEngine(object):
 
     @staticmethod
     def predict_on_item(item, predictor=None, sliding_windows=None):
+        """
+
+        Args:
+            item(SatelliteImage): the item on which to apply the prediction
+            predictor(Predictor): A Predictor object that encapsulates our model
+            sliding_windows(SlidingWindow): The sliding window used to generate candidates
+
+        Returns:
+
+        """
         if not isinstance(sliding_windows, (list, tuple)):
             sliding_windows = [sliding_windows]
         LOGGER.info("Generating tiles to predict")
@@ -46,5 +58,15 @@ class InferenceEngine(object):
         return tiles_results
 
     def predict_on_items(self, predictor=None, sliding_windows=None):
+        """
+            Apply predictor + sliding window on all items in self.items
+        Args:
+            predictor(Predictor): A Predictor object that encapsulates our model
+            sliding_windows(SlidingWindow): The sliding window used to generate candidates
+
+        Returns:
+            A list of PredictionTile (Tile + predicted_label + groundtruth label)
+
+        """
         for item in self.items:
             self.predict_on_item(item, predictor=predictor, sliding_windows=sliding_windows)

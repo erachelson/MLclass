@@ -6,6 +6,10 @@ from khumeia.roi.tile import LabelledTile
 class SlidingWindow(object):
     """
 
+    Sliding windows play an integral role in object classification, as they allow us to localize exactly “where” in an image an object resides.
+
+    Sliding window approaches are simple in concept, a bounding box of the desired size(s) slides across the test image and at each location applies an image classifier to the current window
+
     ![example1](https://cdn-images-1.medium.com/max/800/1*FHEOyHm1BTWyygQcgvNSXQ.png)
 
     Sample cutouts of a sliding window iterating from top to bottom (Imagery Courtesy of DigitalGlobe)
@@ -29,13 +33,16 @@ class SlidingWindow(object):
         """
 
         Args:
-            tile_size:
-            padding:
-            stride:
-            discard_background:
-            label_assignment_mode:
-            intersection_over_area_threshold:
-            data_transform_fn:
+            tile_size(int): tile size (h,w) in pixels
+            padding(int):  padding in pixels. best keep it to 0
+            stride(int): Stride ("pas") in pixels
+            discard_background(bool): Don't return tiles with label Background
+            label_assignment_mode: "center" or "ioa",
+                if center: If a tile contains a groundtruth's center it gets its label
+                if ioa: Calculates the intersection over min(area_tile,area_groundtruth), if the ioa > threshold, then
+                assigns
+            intersection_over_area_threshold(float): threshold
+            data_transform_fn: Useful to generate augmented samples or to apply a specific preprocessing
         """
         self.tile_size = tile_size
         self.stride = stride
@@ -47,11 +54,15 @@ class SlidingWindow(object):
 
     def get_tiles_for_item(self, item):
         """
+            Apply the sliding window on a full satellite images to generate a list of tiles
+            Compares the tiles to the item's groundtruths
+            Tiles that matches the declared conditions are assigned with the groundtruth's label
 
         Args:
-            item:
+            item(khumeia.data.item.SatelliteImage): input item
 
         Returns:
+            list[LabelledTile]: A list of tile with their labels
 
         """
         labels = item.labels

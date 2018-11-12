@@ -4,7 +4,10 @@ import hashlib
 
 class BoundingBox(object):
     """
-    Base bbox class
+    Base bounding box class. A Bounding Box is basically a rectangle with x_min, y_min width and height
+    We follow numpy and opencv image conventions:
+    (0,0) is top left, x is right and 2nd dim, y is bottom and 1st dim
+    So an image is a matrix of shape (height, width, 3) where the three channels are r,g,b
     """
 
     def __init__(self, x_min, y_min, height, width):
@@ -24,7 +27,7 @@ class BoundingBox(object):
     @classmethod
     def from_bounds(cls, x_min, y_min, x_max, y_max):
         """
-
+            Creates a BBox from x1,y1,x2,y2 instead of x1,y1,height,width
         Args:
             x_min:
             y_min:
@@ -49,7 +52,7 @@ class BoundingBox(object):
     def area(self):
         """
 
-        Returns:
+        Returns: the area of the bbox
 
         """
         return self.width * self.height
@@ -76,7 +79,7 @@ class BoundingBox(object):
     def center(self):
         """
 
-        Returns:
+        Returns: (x,y) the center (float) of the bbox
 
         """
         return (self.x_min + self.x_max) / 2., (self.y_min + self.y_max) / 2.
@@ -85,8 +88,8 @@ class BoundingBox(object):
         """
 
         Args:
-            point:
-            strict:
+            point(tuple): (x,y)
+            strict: strict inclusion or not
 
         Returns:
 
@@ -101,9 +104,9 @@ class BoundingBox(object):
         """
 
         Args:
-            bbox:
+            bbox(BoundingBox):
 
-        Returns:
+        Returns: bool
 
         """
         return bbox.x_min >= self.x_min and \
@@ -115,9 +118,9 @@ class BoundingBox(object):
         """
 
         Args:
-            bbox:
+            bbox(BoundingBox):
 
-        Returns:
+        Returns: bool
 
         """
         x_min = max(self.x_min, bbox.x_min)
@@ -131,10 +134,10 @@ class BoundingBox(object):
         """
 
         Args:
-            bbox:
+            bbox(BoundingBox):
 
         Returns:
-
+            BoundingBox if intersection else BoundingBox with height=0 and width=0
         """
         if self.intersects(bbox):
             x_min = max(self.x_min, bbox.x_min)
@@ -152,6 +155,7 @@ class BoundingBox(object):
             bbox:
 
         Returns:
+            intersection over union
 
         """
         if not self.intersects(bbox):

@@ -1,7 +1,7 @@
 geojson
 joblib
 jupyter
-keras==2.2.4
+keras>=2.2.4
 numpy
 opencv-python
 pandas

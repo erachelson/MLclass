@@ -22,7 +22,7 @@ def draw_bbox_on_image(image, bbox, color=(0, 255, 0), thickness=2):
 
 def draw_bboxes_on_image(image, bboxes, color=(0, 255, 0), thickness=2):
     """
-    Draw one BoundingBox to an image using cv2.rectangle
+    Draw BoundingBoxes to an image using cv2.rectangle
     Args:
         image:
         bboxes:
@@ -40,7 +40,7 @@ def draw_bboxes_on_image(image, bboxes, color=(0, 255, 0), thickness=2):
 
 def draw_item(item):
     """
-
+        Draw an item labels on its image
     Args:
         item:
 
@@ -55,10 +55,10 @@ def draw_item(item):
 
 def draw_item_with_tiles(item, tiles=None):
     """
-
+        Draw an item labels on its images as well as the tiles in tiles
     Args:
         item:
-        tiles:
+        tiles(list[LabelledTIles]):
 
     Returns:
 
@@ -76,7 +76,7 @@ def draw_item_with_tiles(item, tiles=None):
 
 def draw_item_with_results(item, results=None):
     """
-
+        Draw an item labels on its images as well as the PredictionTiles in Tiles
     Args:
         item:
         results(list[PredictionTile]):
