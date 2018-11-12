@@ -1,3 +1,4 @@
+import time
 from khumeia import LOGGER
 from tqdm.autonotebook import tqdm
 from khumeia.roi.tile import PredictionTile
@@ -31,13 +32,15 @@ class InferenceEngine(object):
                 tiles_to_predict[i:i + predictor.batch_size]
                 for i in range(0, len(tiles_to_predict), predictor.batch_size)
             ]
-            for batch in tqdm(batches, desc="Predicting on batch"):
-                batch_results = predictor.predict_on_tiles(batch)
+            for batch in tqdm(
+                    batches, desc="Calling .predict_on_batch() with batch_size {}".format(predictor.batch_size)):
+                batch_data = [tile.get_data(image) for tile in batch]
+                batch_results = predictor.predict_on_batch(batch_data)
                 for i, tile in enumerate(batch):
                     tiles_results.append(PredictionTile.from_labelled_tile_and_prediction(tile, batch_results[i]))
         else:
-            for tile in tqdm(tiles_to_predict, desc="Predicting on tile"):
-                prediction = predictor.predict_on_tile(tile.get_data(image))
+            for tile in tqdm(tiles_to_predict, desc="Calling .predict() with one tile"):
+                prediction = predictor.predict(tile.get_data(image))
                 tiles_results.append(PredictionTile.from_labelled_tile_and_prediction(tile, prediction))
 
         return tiles_results

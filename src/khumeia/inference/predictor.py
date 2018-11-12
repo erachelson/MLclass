@@ -11,9 +11,9 @@ class Predictor(object):
     """
 
     def __init__(self, batch_size=1):
-        self.batch_size = 1
+        self.batch_size = batch_size
 
-    def predict_on_tile(self, tile_data):
+    def predict(self, tile_data):
         """
         receives a numpy array, returns the label
         Args:
@@ -25,7 +25,7 @@ class Predictor(object):
         """
         raise NotImplementedError
 
-    def predict_on_tiles(self, tiles_data):
+    def predict_on_batch(self, tiles_data):
         """
         If you want to implement batching
         Args:
