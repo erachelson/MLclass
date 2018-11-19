@@ -35,8 +35,9 @@ for i in range(Nsteps):
     #      %(len(forest),classif_error, overall, gen))
     #input()
 
-#plt.plot(single_tree_training_error,c='b')
+plt.figure(figsize=(8,8))
+plt.plot(single_tree_training_error,c='b')
 plt.plot(overall_training_error,c='r')
 plt.plot(generalization_error,c='g')
-plt.figure()
+plt.show()
 plot_decision_boundary_forest(forest, sample_weights, X, y)
