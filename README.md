@@ -1,7 +1,6 @@
 # MLclass
 Materials for my Machine Learning class(es).<br>
-Given in English to doctoral students in 2018.<br>
-Previously given in French (in various previous versions) to master students starting 2012.
+Given in English or French to doctoral and/or master students since 2012. In constant evolution.<br>
 
 # Description
 This course offers a discovery of the landscape of Machine Learning through some key algorithms. Although the first session tries to cover the full span of Machine Learning techniques, the subsequent sessions will focus on the Supervized Learning problem and will categorize the algorithms from four distinct points of view (the Bayesian perspective, linear separation, neural networks and ensemble methods). The approach taken mixes voluntarily hands-on practice in Python with theoretical and mathematical understanding of the methods. At the end of the course you will be able to make an informed choice between the main families of ML algorithms, depending on the problem at hand. You will have an understanding of the algorithmic and mathematical properties of each family of methods and you will have a basic practical knowledge of the Scikit-Learn and Keras Python libraries.
