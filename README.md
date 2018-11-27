@@ -65,4 +65,10 @@ Sessions 6 and 7: "Ensemble and committee-based methods"
 T. Hastie, R. Tibshirani, J. Friedman.<br>
 Springer Series in Statistics.<br>
 [https://web.stanford.edu/~hastie/ElemStatLearn/](https://web.stanford.edu/~hastie/ElemStatLearn/)<br>
+
+**Deep Learning**<br>
+Ian Goodfellow and Yoshua Bengio and Aaron Courville<br>
+MIT Press<br>
+[https://www.deeplearningbook.org/](https://www.deeplearningbook.org/)<br>
+
 More references will be provided during the first session and during classes.
