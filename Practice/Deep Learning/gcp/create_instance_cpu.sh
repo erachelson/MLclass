@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-IMAGE_FAMILY="tf-1-11-cpu"
+IMAGE_FAMILY="tf-latest-cpu"
 ZONE="europe-west4-a"
 INSTANCE_NAME="tp-isae-dev-cpu"
 
