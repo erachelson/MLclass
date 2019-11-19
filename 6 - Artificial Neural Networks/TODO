@@ -1,4 +1,0 @@
-Try excessively large step-sizes -> danger in SGD
-
-Remark: a NN with no hidden layer is a linear function
-

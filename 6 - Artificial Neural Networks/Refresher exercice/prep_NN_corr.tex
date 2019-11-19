@@ -1,0 +1,114 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+%\usepackage[latin1]{inputenc}
+%\usepackage[utf8]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{graphicx}
+\setlength{\parskip}{2pt}
+
+\author{Emmanuel Rachelson}
+\title{Pre-class activities\\Artifical Neural Networks}
+\date{}
+
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+
+\begin{document}
+
+\maketitle
+
+\section{Derivation: the chain rule and total derivatives}
+
+\begin{enumerate}
+	\item Consider a function $f:\R^p\rightarrow \R^q$. Recall the expression of this function's Jacobian matrix.
+	
+	{\it The Jacobian matrix of $f$ in $\hat{x}$ is the $q\times p$ matrix of partial derivatives.
+	$$\left[\begin{array}{ccc}
+	\frac{\partial f_1}{\partial x_1}(\hat{x}) & \cdots & \frac{\partial f_1}{x_p}(\hat{x})\\
+	\vdots & \ddots & \vdots \\
+	\frac{\partial f_q}{\partial x_1}(\hat{x}) & \cdots & \frac{\partial f_q}{x_p}(\hat{x})
+	\end{array}\right].$$
+	
+	The $k$th row of the Jacobian of $f$ evaluated in $\hat{x}$ is the vector of partial derivatives of $f_k$ in $\hat{x}$, that is the transpose of the gradient of $f_k$ in $\hat{x}$.
+	}
+	
+	\item The total derivative $Df_{\hat{x}}(h)$ of $f$ in $\hat{x}$ is a linear operator. Recall its definition (for the same $f:\R^p\rightarrow \R^q$ function as above).
+	
+	{\it The total derivative of $f$ in $\hat{x}$ is the linear mapping: $Df_{\hat{x}}:\R^p\rightarrow\R^q$, where $h \in \R^p$ such that
+	$$f(\hat{x}+h) = f(\hat{x}) + Df_{\hat{x}}(h) + o(\|h\|).$$
+	The matrix of the total derivative is the Jacobian of $f$ in $\hat{x}$. Thus, for $h = \left[h_1,\ldots,h_p\right]^T$:
+	$$Df_{\hat{x}}(h) = \left[\begin{array}{ccc}
+	\frac{\partial f_1}{\partial x_1}(\hat{x}) & \cdots & \frac{\partial f_1}{x_p}(\hat{x})\\
+	\vdots & \ddots & \vdots \\
+	\frac{\partial f_q}{\partial x_1}(\hat{x}) & \cdots & \frac{\partial f_q}{x_p}(\hat{x})
+	\end{array}\right] \left[\begin{array}{c}
+	h_1\\ \vdots\\ h_p
+	\end{array}\right] = Df_{\hat{x}} \cdot h.$$
+	}
+	
+	\item Consider two functions, $g:\R\rightarrow\R^p$ and $f:\R^p\rightarrow\R$. Let $F=f\circ g$ be the composite function such that $F(x)=f(g(x))$. Write the derivative of $F$ with respect to $x$ as an expression of the partial derivatives of $f$ and $g$.
+	
+	{\it The chain rule tells us that:
+	$$DF_{\hat{x}} = D(f\circ g)_{\hat{x}} = Df_{g(\hat{x})} Dg_{\hat{x}}.$$
+	This can be interpreted directly in terms of matrix multiplication.
+	
+	But $f:\R^p \rightarrow \R$, so:
+	$$Df_{g(\hat{x})} = \left[\begin{array}{ccc}
+	\frac{\partial f}{\partial x_1}(g(\hat{x})) &
+	\cdots &
+	\frac{\partial f}{\partial x_p}(g(\hat{x}))
+	\end{array}\right].$$
+	
+	Similarly, $g:\R\rightarrow \R^p$, so:
+	$$Dg_{\hat{x}} = \left[\begin{array}{c}
+	\frac{dg_1}{dx}(\hat{x}) \\
+	\vdots \\
+	\frac{dg_p}{dx}(\hat{x})
+	\end{array}\right].$$
+	
+	Consequently, and as expected, $DF_{\hat{x}}$ is a scalar:
+	$$DF_{\hat{x}} = \frac{dF}{dx}(\hat{x}) = \sum_{k=1}^p \frac{\partial f}{\partial x_k}(g(\hat{x})) \frac{dg_k}{dx}(\hat{x}).$$
+}
+	
+	\item Now suppose that in the example above, all the $g_k$ functions are identity functions, that is $g(x) = [x,\ldots, x]^T$. How does the total derivative of $F$ simplify?
+	
+	{\it
+	In this case, $\frac{dg_k}{dx}(\hat{x}) = 1$ and thus:
+	$$DF_{\hat{x}} = \frac{dF}{dx}(\hat{x}) = \sum_{k=1}^p \frac{\partial f}{\partial x_k}(g(\hat{x})).$$
+	}
+	
+	\item Finally, consider two functions $g:\R\rightarrow \R^p$ and $f:\R^p\rightarrow \R^q$. As previously, lets $F=f\circ g$ be the composite function. Write the total derivative of $F$ as an expression of the partial derivatives of $f$ and $g$.
+	
+	{\it Just as before:
+	$$DF_{\hat{x}} = D(f\circ g)_{\hat{x}} = Df_{g(\hat{x})} Dg_{\hat{x}}.$$
+	
+	Now $Df_{g(\hat{x})}$ is the $q\times p$ matrix:
+	$$Df_{g(\hat{x})} = \left[\begin{array}{ccc}
+	\frac{\partial f_1}{\partial x_1}(g(\hat{x})) & \cdots & \frac{\partial f_1}{x_p}(g(\hat{x}))\\
+	\vdots & \ddots & \vdots \\
+	\frac{\partial f_q}{\partial x_1}(g(\hat{x})) & \cdots & \frac{\partial f_q}{x_p}(g(\hat{x}))
+	\end{array}\right].$$
+	
+	Let's write $\frac{\partial f}{\partial x_k}(g(\hat{x}))$ the $k$th column in this matrix. Then we have:
+	$$Df_{g(\hat{x})} = \left[\begin{array}{ccc}
+	\frac{\partial f}{\partial x_1}(g(\hat{x})) & \cdots & \frac{\partial f}{\partial x_p}(g(\hat{x}))
+	\end{array}\right].$$
+	
+	And: 
+	$$Dg_{\hat{x}} = \left[\begin{array}{c}
+	\frac{dg_1}{dx}(\hat{x}) \\
+	\vdots \\
+	\frac{dg_p}{dx}(\hat{x})
+	\end{array}\right].$$
+	
+	So the same writing as above still holds:
+	$$DF_{\hat{x}} = \sum_{k=1}^p \frac{\partial f}{\partial x_k}(g(\hat{x})) \frac{dg_k}{dx}(\hat{x}).$$
+	Recall that $\frac{\partial f}{\partial x_k}(g(\hat{x})) \in \R^q$ and so $DF_{\hat{x}}\in \R^q$ as expected.
+	}
+\end{enumerate}
+
+\end{document}
