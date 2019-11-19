@@ -22,4 +22,3 @@ def forward_pass(x, verbose=False):
     return y,z
 
 y,z = forward_pass(input_value, verbose=True)
-
