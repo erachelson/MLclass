@@ -1,6 +1,6 @@
-class Net(nn.Module):
+class ConvNet(nn.Module):
     def __init__(self):
-        super(Net, self).__init__()
+        super(ConvNet, self).__init__()
         self.conv1 = nn.Conv2d(1, 32, 3, 1)
         self.conv2 = nn.Conv2d(32, 64, 3, 1)
         self.fc1 = nn.Linear(9216, 128)
@@ -18,9 +18,8 @@ class Net(nn.Module):
         output = F.softmax(x, dim=1)
         return output
 
-net = Net()
+net = ConvNet()
 train(net)
-y_test, predictions = get_test_predictions(net)
-print("Accuracy: ")
-print(accuracy_score(predictions, y_test))
-print(classification_report(predictions, y_test, target_names=labels_text))
+y_valid, predictions = get_valid_predictions(net)
+y_valid, predictions = get_valid_predictions(net)
+print('Accuracy: ', accuracy_score(predictions, y_valid))
