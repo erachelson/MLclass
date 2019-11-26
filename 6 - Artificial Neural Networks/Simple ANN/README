@@ -1,2 +1,2 @@
 The artificial neural network built during class, as a Python class.
-
+This is an implementation of an MLP with sigmoid neurons, trained with SGD.
