@@ -1,0 +1,26 @@
+intents:
+  - greet
+  - ask_time
+
+entities:
+  - location
+
+slots:
+   location:
+      type: text
+
+actions:
+- utter_greet
+- utter_time
+- utter_impolite
+
+templates:
+  utter_greet:
+  - text: "Bien le bonjour !"
+
+  utter_time:
+  - text: "Il est 10h à {location}"
+  
+  utter_impolite:
+  - text: "Tu pourrais au moins me dire bonjour !"
+
