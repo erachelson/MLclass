@@ -1,0 +1,4 @@
+sklearn
+nltk
+gensim
+rasa
