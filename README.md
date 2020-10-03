@@ -25,6 +25,8 @@ By the end of the class, you should be able to:
 - Basic probability and optimization theory.
 
 You must download and install an Anaconda distribution for the latest version of Python before the course ([https://anaconda.org/](https://anaconda.org/)). Alternatively (to downloading Anaconda), you'll need a working Python installation (latest version) with at least, Numpy, Scipy, Matplotlib and Jupyter installed.<br>
+If you have a compatible OS, you can [install Docker](https://docs.docker.com/get-docker/) and Docker compose for ready-to use environments. 
+
 Additional required Python packages:
 - nltk
 - keras (conda install keras)
